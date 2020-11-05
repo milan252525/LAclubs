@@ -68,7 +68,7 @@ def get_clubs(region, country, type):
         }
         if type == "all":
             result.append(output)
-        elif type == "low" and len(club['members']) <= 95:
+        elif type == "low" and len(club['members']) < 95:
             result.append(output)
         elif region is not None and club['region'].lower() == region.lower():
             result.append(output)
