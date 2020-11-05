@@ -24,6 +24,8 @@ def clubs():
         title = f"{region.upper()} CLUBS"
     else:
         title = f"{country.upper()} CLUBS"
+        
+    title = title.replace('EL', 'EL ').replace('REPUBLIC', ' REPUBLIC')
 
     clubs = get_clubs.get_clubs(region=region, country=country, type=type)
     
