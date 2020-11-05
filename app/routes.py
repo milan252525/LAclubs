@@ -7,7 +7,6 @@ from . import get_clubs
 def index():
     return render_template('index.html')
 
-
 @app.route('/clubs')
 def clubs():
 
@@ -30,3 +29,7 @@ def clubs():
     clubs = get_clubs.get_clubs(region=region, country=country, type=type)
     
     return render_template('clubs.html', clubs=clubs, title=title)
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
