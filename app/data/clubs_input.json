@@ -74,8 +74,8 @@
     {
         "name": "LA Shade",
         "tag": "L2RYLJJU",
-        "region": "NA",
-        "country": "USA"
+        "region": "EU",
+        "country": "UK"
     },
     {
         "name": "LA Stars",
@@ -621,7 +621,7 @@
         "name": "LA DeRucula SV",
         "tag": "299VLLPU0",
         "region": "LATAM",
-        "country": "NICARAGUA"
+        "country": "ELSALVADOR"
     },
     {
         "name": "LA DeRucula II",
