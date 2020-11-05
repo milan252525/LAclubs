@@ -1,0 +1,668 @@
+[
+    {
+        "name": "LA Storm",
+        "tag": "PVJ9V2V8",
+        "region": "EU",
+        "country": "UK"
+    },
+    {
+        "name": "LA Fury",
+        "tag": "Q2G0GC2L",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Spain",
+        "tag": "PLV9UU8G",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Gaming",
+        "tag": "L2J9UJRC",
+        "region": "NA",
+        "country": "USA"
+    },
+    {
+        "name": "LA Crown",
+        "tag": "L2CVJJGG",
+        "region": "EU",
+        "country": "CROATIA"
+    },
+    {
+        "name": "LA Aqua",
+        "tag": "Q02Q2998",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Rift",
+        "tag": "L0L22JYJ",
+        "region": "NA",
+        "country": "USA"
+    },
+    {
+        "name": "LA Arrow",
+        "tag": "PVRLQUYP",
+        "region": "EU",
+        "country": "UK"
+    },
+    {
+        "name": "LA Finland",
+        "tag": "L2GV9PV8",
+        "region": "EU",
+        "country": "FINLAND"
+    },
+    {
+        "name": "LA Easy",
+        "tag": "YYQG0RVU",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Lightning",
+        "tag": "Y89U8U0R",
+        "region": "NA",
+        "country": "USA"
+    },
+    {
+        "name": "LA Legends",
+        "tag": "YGU2QQJ0",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Shade",
+        "tag": "L2RYLJJU",
+        "region": "NA",
+        "country": "USA"
+    },
+    {
+        "name": "LA Stars",
+        "tag": "YGVJQ998",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Jungle",
+        "tag": "GYU9UVR8",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Souls",
+        "tag": "QPCCYC98",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Poland",
+        "tag": "GU9JPGVC",
+        "region": "EU",
+        "country": "POLAND"
+    },
+    {
+        "name": "LA Blades",
+        "tag": "Y00QY99Q",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Kings",
+        "tag": "LUJPVJ00",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Warriors",
+        "tag": "Y2VC900U",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Matrix",
+        "tag": "Y0VC2CL0",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Swiss",
+        "tag": "L282GLJU",
+        "region": "EU",
+        "country": "SWITZERLAND"
+    },
+    {
+        "name": "LA Thunder",
+        "tag": "YY8JCR2R",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Azhar",
+        "tag": "L9G9VJ29",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Knights",
+        "tag": "Q2YRUL2J",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Kingsmen",
+        "tag": "Q8PYY0JU",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Realm",
+        "tag": "YV80VYL0",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Spectrum",
+        "tag": "GJRJ8RUP",
+        "region": "NA",
+        "country": "USA"
+    },
+    {
+        "name": "LA Shadow",
+        "tag": "LYR0V0RV",
+        "region": "NA",
+        "country": "USA"
+    },
+    {
+        "name": "LA Expert",
+        "tag": "RRJR0QC8",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Jubilant",
+        "tag": "8YRRCVR9",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Muskets",
+        "tag": "U02YRGP2",
+        "region": "EU",
+        "country": "FINLAND"
+    },
+    {
+        "name": "LA United",
+        "tag": "GYU2G98G",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Squad",
+        "tag": "CQPP20Y8",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Galaxy",
+        "tag": "U2J00QCC",
+        "region": "EU",
+        "country": "POLAND"
+    },
+    {
+        "name": "LA 1971 BD\u2122",
+        "tag": "U2VGR982",
+        "region": "AS",
+        "country": "BANGLADESH"
+    },
+    {
+        "name": "LA Nexus\u2122",
+        "tag": "CYLQQVC8",
+        "region": "AS",
+        "country": "BANGLADESH"
+    },
+    {
+        "name": "LA Chromium",
+        "tag": "CQYPRQYJ",
+        "region": "AS",
+        "country": "BANGLADESH"
+    },
+    {
+        "name": "LA Snow",
+        "tag": "CGV0GVG2",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Exenze",
+        "tag": "JY08JC0P",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Iberia",
+        "tag": "JY2L88RC",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Infinity",
+        "tag": "CG8CQV2J",
+        "region": "EU",
+        "country": "POLAND"
+    },
+    {
+        "name": "LA Wicked",
+        "tag": "R8089CYG",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Gang",
+        "tag": "QJ8J0L0R",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA DeRucula",
+        "tag": "UGQ82CCG",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA Flamez",
+        "tag": "V9RCQLJR",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Tall",
+        "tag": "UVUYJPUJ",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Patrix",
+        "tag": "20P2V8LY8",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Prodigy",
+        "tag": "20GYR89L2",
+        "region": "AU",
+        "country": "AUSTRALIA"
+    },
+    {
+        "name": "LA Guerilla",
+        "tag": "2029JL09Q",
+        "region": "AS",
+        "country": "BANGLADESH"
+    },
+    {
+        "name": "LA DeRucula UY",
+        "tag": "202L2J0PR",
+        "region": "LATAM",
+        "country": "URUGUAY"
+    },
+    {
+        "name": "LA DeRuta",
+        "tag": "U8UU8J92",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA DeRumba",
+        "tag": "200V0Y2PU",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA DeRucula VE",
+        "tag": "V0GY8QQJ",
+        "region": "LATAM",
+        "country": "VENEZUELA"
+    },
+    {
+        "name": "LA Celestials",
+        "tag": "2082V9L2R",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA OneUp",
+        "tag": "209QJYLL2",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Vortex",
+        "tag": "202CJ2J8J",
+        "region": "AS",
+        "country": "BANGLADESH"
+    },
+    {
+        "name": "LA DeRutina",
+        "tag": "2209CGRJ2",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA Legacy",
+        "tag": "22Y9VRJUG",
+        "region": "NA",
+        "country": "USA"
+    },
+    {
+        "name": "LA DeRucula CO",
+        "tag": "22YV2JVUY",
+        "region": "LATAM",
+        "country": "COLOMBIA"
+    },
+    {
+        "name": "LA Zero",
+        "tag": "22YQQ2JYJ",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Gods",
+        "tag": "22YQLYRPU",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA DeRucula HN",
+        "tag": "22PLVJRLR",
+        "region": "LATAM",
+        "country": "HONDURAS"
+    },
+    {
+        "name": "LA Ravens",
+        "tag": "22Q2990RC",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Elite",
+        "tag": "20UPUYP89",
+        "region": "EU",
+        "country": "PORTUGAL"
+    },
+    {
+        "name": "LA Portugal",
+        "tag": "22CLR8RC9",
+        "region": "EU",
+        "country": "PORTUGAL"
+    },
+    {
+        "name": "LA Sleepy",
+        "tag": "GC0RY2LU",
+        "region": "EU",
+        "country": "POLAND"
+    },
+    {
+        "name": "LA Alpha",
+        "tag": "20V9CU22Y",
+        "region": "EU",
+        "country": "PORTUGAL"
+    },
+    {
+        "name": "LA Bibi",
+        "tag": "22URYJ2LG",
+        "region": "EU",
+        "country": "PORTUGAL"
+    },
+    {
+        "name": "LA DeRutini CL",
+        "tag": "20GR0UUYU",
+        "region": "LATAM",
+        "country": "CHILE"
+    },
+    {
+        "name": "LA DeRucula CL",
+        "tag": "20UGCVQCJ",
+        "region": "LATAM",
+        "country": "CHILE"
+    },
+    {
+        "name": "LA Smurfs",
+        "tag": "20RUYCCCP",
+        "region": "EU",
+        "country": "POLAND"
+    },
+    {
+        "name": "LA Pixel",
+        "tag": "2220L9UJ2",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Egypt",
+        "tag": "2890J2QJ2",
+        "region": "AF",
+        "country": "EGYPT"
+    },
+    {
+        "name": "LA Tiger",
+        "tag": "22YJQ2PY8",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Toxic",
+        "tag": "22QGULQL8",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA Night",
+        "tag": "22LY9YJ9G",
+        "region": "EU",
+        "country": "POLAND"
+    },
+    {
+        "name": "LA ThinkTank",
+        "tag": "8YCPGJRV",
+        "region": "NA",
+        "country": "USA"
+    },
+    {
+        "name": "LA Egypt 2",
+        "tag": "R8LL2VVJ",
+        "region": "AF",
+        "country": "EGYPT"
+    },
+    {
+        "name": "LA DeRuta HN",
+        "tag": "G8QQUYRU",
+        "region": "LATAM",
+        "country": "HONDURAS"
+    },
+    {
+        "name": "LA DeRucula BO",
+        "tag": "280L9Q0J2",
+        "region": "LATAM",
+        "country": "BOLIVIA"
+    },
+    {
+        "name": "LA Tropical",
+        "tag": "8UVVUU29",
+        "region": "AS",
+        "country": "BANGLADESH"
+    },
+    {
+        "name": "LA Galaxy 2",
+        "tag": "2882G0V99",
+        "region": "EU",
+        "country": "POLAND"
+    },
+    {
+        "name": "LA DeRucula SFX",
+        "tag": "22G9PVG9Q",
+        "region": "LATAM",
+        "country": "URUGUAY"
+    },
+    {
+        "name": "LA DeRucula PY",
+        "tag": "28YJR9PPL",
+        "region": "LATAM",
+        "country": "PARAGUAY"
+    },
+    {
+        "name": "LA DeRumania",
+        "tag": "20PJQQQG2",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA Beta",
+        "tag": "289L9LC2L",
+        "region": "EU",
+        "country": "PORTUGAL"
+    },
+    {
+        "name": "LA DeRutini RD",
+        "tag": "28929G0G9",
+        "region": "LATAM",
+        "country": "DOMINICANREPUBLIC"
+    },
+    {
+        "name": "LA DeRumba RD",
+        "tag": "PPLU0CU9",
+        "region": "LATAM",
+        "country": "DOMINICANREPUBLIC"
+    },
+    {
+        "name": "LA DeRush RD",
+        "tag": "29QUGLYC9",
+        "region": "LATAM",
+        "country": "DOMINICANREPUBLIC"
+    },
+    {
+        "name": "LA Rage",
+        "tag": "29UJJJQJR",
+        "region": "AS",
+        "country": "SINGAPORE"
+    },
+    {
+        "name": "LA DeRucula GT",
+        "tag": "290P2JQQQ",
+        "region": "LATAM",
+        "country": "GUATEMALA"
+    },
+    {
+        "name": "LA DeRucula PE",
+        "tag": "29VYV882J",
+        "region": "LATAM",
+        "country": "PERU"
+    },
+    {
+        "name": "LA Blaze",
+        "tag": "2P0CGQUU0",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA Inferno",
+        "tag": "2P280P2LG",
+        "region": "NA",
+        "country": "USA"
+    },
+    {
+        "name": "LA Rogue",
+        "tag": "YCU9G0LU",
+        "region": "AS",
+        "country": "INDIA"
+    },
+    {
+        "name": "LA DeRush",
+        "tag": "2999V02JQ",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA DeRubi",
+        "tag": "290PU88YR",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA DeRutini",
+        "tag": "299R29CPJ",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA DeRuinas",
+        "tag": "CG82RLUL",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA DeRuffians",
+        "tag": "28CJQGG9R",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA DeRuta VE",
+        "tag": "28J2UU0PU",
+        "region": "LATAM",
+        "country": "VENEZUELA"
+    },
+    {
+        "name": "LA DeRustorm GT",
+        "tag": "290RQQJRQ",
+        "region": "LATAM",
+        "country": "GUATEMALA"
+    },
+    {
+        "name": "LA DeRucula SV",
+        "tag": "299VLLPU0",
+        "region": "LATAM",
+        "country": "NICARAGUA"
+    },
+    {
+        "name": "LA DeRucula II",
+        "tag": "298VC9QG9",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA DeRuculandia",
+        "tag": "29PQ80U2G",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA DeRustick",
+        "tag": "29PC99GQC",
+        "region": "LATAM",
+        "country": "ARGENTINA"
+    },
+    {
+        "name": "LA Free",
+        "tag": "28VR8VRRJ",
+        "region": "EU",
+        "country": "SPAIN"
+    },
+    {
+        "name": "LA DeRucula SV\u00b2",
+        "tag": "28V2VCP2U",
+        "region": "LATAM",
+        "country": "ELSALVADOR"
+    },
+    {
+        "name": "LA Persia",
+        "tag": "28UCUYR8J",
+        "region": "AS",
+        "country": "IRAN"
+    },
+    {
+        "name": "LA Asia",
+        "tag": "29LCCQL2J",
+        "region": "AS",
+        "country": ""
+    }
+]

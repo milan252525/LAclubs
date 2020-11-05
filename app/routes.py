@@ -1,0 +1,30 @@
+from flask import render_template, request
+from app import app
+from . import get_clubs
+
+@app.route('/')
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
+
+@app.route('/clubs')
+def clubs():
+
+    region = request.args.get('region', default = None)
+    country = request.args.get('country', default = None)
+    type = request.args.get('type', default = None)
+
+    if type is None and country is None and region is None:
+        type = "all"
+
+    if type is not None:
+        title = f"{type.upper()} CLUBS"
+    elif region is not None:
+        title = f"{region.upper()} CLUBS"
+    else:
+        title = f"{country.upper()} CLUBS"
+
+    clubs = get_clubs.get_clubs(region=region, country=country, type=type)
+    
+    return render_template('clubs.html', clubs=clubs, title=title)
