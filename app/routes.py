@@ -1,6 +1,7 @@
-from flask import render_template, request
+from flask import render_template, request, send_from_directory
 from app import app
 from . import get_clubs
+import os
 
 @app.route('/')
 @app.route('/index')
