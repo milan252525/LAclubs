@@ -80,5 +80,5 @@ def get_clubs(region, country, type):
         result.sort(key=lambda x: x['member_count'])
     else:
         result.sort(key=lambda x: x['trophies'], reverse=True)
-    print("time to build clubs:", int(time() - start))
+    print("time to build clubs:", time() - start)
     return result
