@@ -1,5 +1,6 @@
 import json
 import os
+from time import time
 
 def get_pres_vp_sen(members):
     pres = ""
@@ -42,6 +43,7 @@ def get_rank_id(trophies):
 
 
 def get_clubs(region, country, type):
+    start = time()
     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
     json_url = os.path.join(SITE_ROOT, "data", "club_data.json")
     with open(json_url) as f:
@@ -78,4 +80,5 @@ def get_clubs(region, country, type):
         result.sort(key=lambda x: x['member_count'])
     else:
         result.sort(key=lambda x: x['trophies'], reverse=True)
+    print("time to build clubs:", int(time() - start))
     return result
