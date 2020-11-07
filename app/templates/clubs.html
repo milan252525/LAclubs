@@ -3,55 +3,57 @@
 {% block content %}
 
 {% for club in clubs %}
-    <div class="club">
-        <div class="row top_row">
-            <div class="center">
-                <img class="icon" src="{{ url_for('static', filename='img/badges/' + club.badge + '.png') }}" alt="club badge">
-                <div class="">{{ club.name }}</div>
-                <div class="space_left show_on_hover">{{ '#' + club.tag }}</div>
+    <a href="club?tag={{ club.tag }}" class="link">
+        <div class="club" id="{{ club.name.replace('LA ', '').lower() }}">
+            <div class="row top_row">
+                <div class="center">
+                    <img class="icon" src="{{ url_for('static', filename='img/badges/' + club.badge + '.png') }}" alt="club badge">
+                    <div class="">{{ club.name }}</div>
+                    <div class="space_left show_on_hover">{{ '#' + club.tag }}</div>
+                </div>
+                <div class="center">
+                    <img class="icon_bigger" src="{{ url_for('static', filename='img/' + club.type + '.png') }}" alt="club status">
+                    <div class="{{ 'red' if club.member_count <= 90 else '' }}">{{ club.member_count }}</div>
+                    <div>/100</div>
+                </div>
             </div>
-            <div class="center">
-                <img class="icon_bigger" src="{{ url_for('static', filename='img/' + club.type + '.png') }}" alt="club status">
-                <div class="{{ 'red' if club.member_count <= 90 else '' }}">{{ club.member_count }}</div>
-                <div>/100</div>
+            <div class="row">
+                <div class="description"> {{ club.description }} </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="description"> {{ club.description }} </div>
-        </div>
-        <div class="row">
-            <div class="center">
-                <img class="icon" src="{{ url_for('static', filename='img/trophy.png') }}" alt="club trophies icon"> 
-                <div class=""> {{ club.trophies }} </div>
-            </div>
-            <div class="center">
-                <!-- <div class="info">Required:</div> -->
-                <img class="icon_bigger" src="{{ url_for('static', filename='img/leagues/league_' + club.required_trophies_id + '.png') }}" alt="league badge">
-                <div class=""> {{ club.required_trophies }} </div>
-            </div>
+            <div class="row">
+                <div class="center">
+                    <img class="icon" src="{{ url_for('static', filename='img/trophy.png') }}" alt="club trophies icon"> 
+                    <div class=""> {{ club.trophies }} </div>
+                </div>
+                <div class="center">
+                    <!-- <div class="info">Required:</div> -->
+                    <img class="icon_bigger" src="{{ url_for('static', filename='img/leagues/league_' + club.required_trophies_id + '.png') }}" alt="league badge">
+                    <div class=""> {{ club.required_trophies }} </div>
+                </div>
 
+            </div>
+            <div class="row">
+                <div class="center">
+                    <div class="info">Average:</div>
+                    <div class=""> {{ club.average }} </div>
+                </div>
+                <div class="center">
+                    <img class="icon_bigger" src="{{ url_for('static', filename='img/president.png') }}" alt="club president"> 
+                    <div class=""> {{ club.president }} </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="center">
+                    <div class="info">Vice-Presidents:</div>
+                    <div class=""> {{ club.vp_count }} </div>
+                </div>
+                <div class="center">
+                    <div class="info">Seniors:</div>
+                    <div class=""> {{ club.sen_count }} </div>
+                </div>
+            </div>
         </div>
-        <div class="row">
-            <div class="center">
-                <div class="info">Average:</div>
-                <div class=""> {{ club.average }} </div>
-            </div>
-            <div class="center">
-                <img class="icon_bigger" src="{{ url_for('static', filename='img/president.png') }}" alt="club president"> 
-                <div class=""> {{ club.president }} </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="center">
-                <div class="info">Vice-Presidents:</div>
-                <div class=""> {{ club.vp_count }} </div>
-            </div>
-            <div class="center">
-                <div class="info">Seniors:</div>
-                <div class=""> {{ club.sen_count }} </div>
-            </div>
-        </div>
-    </div>
+    </a>
 {% endfor %}
 
 {% endblock %}

@@ -1,0 +1,34 @@
+{% extends "club_base.html" %}
+
+{% block content %}
+<div id="club_data">
+    <table id="members">
+        <colgroup>
+            <col id="position">
+            <col id="name">
+            <col id="role">
+            <col id="trophies">
+        </colgroup>
+        <tr id="header">
+            <th class="text_center">#</th>
+            <th>NAME</th>
+            <th>ROLE</th>
+            <th>TROPHIES</th>
+        </tr>
+        {% for member in club.members %}
+        <tr id="{{ member.tag.lower().strip('#') }}">
+            <td class="text_center"> {{ loop.index }}</td>
+            <td class="center">
+                <img class="icon_bigger" src="{{ url_for('static', filename='img/icons/' + member.icon.id|string + '.png') }}" alt="profile icon">
+                <span> {{ member.name }} </span>
+            </td>
+            <td> {{ member.role }}</td>
+            <td class="center">
+                <img class="icon_bigger" src="{{ url_for('static', filename='img/leagues/league_' + member.league_badge + '.png') }}" alt="league badge">
+                <span> {{ member.trophies }} </span>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

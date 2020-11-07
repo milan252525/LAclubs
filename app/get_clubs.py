@@ -82,3 +82,28 @@ def get_clubs(region, country, type):
         result.sort(key=lambda x: x['trophies'], reverse=True)
     print("time to build clubs:", time() - start)
     return result
+
+def get_club(tag):
+    start = time()
+    SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+    json_url = os.path.join(SITE_ROOT, "data", "club_data.json")
+    with open(json_url) as f:
+        all = json.load(f)
+
+    club_tag = tag.upper().strip("#")
+
+    club = all[club_tag]
+
+    output = {
+        'name': club['name'],
+        'tag' : club_tag,
+        'badge': str(club['badge'] - 8000000),
+        'members': club['members']
+    }
+
+    for member in output['members']:
+        member['league_badge'] = str(get_rank_id(member['trophies']))
+        member['role'] = member['role'].replace('eP', 'e-P').title()
+
+    print("time to build club:", time() - start)
+    return output
