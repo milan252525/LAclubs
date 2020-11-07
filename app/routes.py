@@ -10,7 +10,6 @@ def index():
 
 @app.route('/clubs')
 def clubs():
-
     region = request.args.get('region', default = None)
     country = request.args.get('country', default = None)
     type = request.args.get('type', default = None)
@@ -30,6 +29,13 @@ def clubs():
     clubs = get_clubs.get_clubs(region=region, country=country, type=type)
     
     return render_template('clubs.html', clubs=clubs, title=title)
+
+@app.route('/club')
+def club():
+    tag = request.args.get('tag', default = None)
+    member = request.args.get('member', default = None)
+    club = get_clubs.get_club(tag)
+    return render_template('club_single.html', club=club, title=club['name'])
 
 @app.route('/favicon.ico')
 def favicon():

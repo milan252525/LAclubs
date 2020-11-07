@@ -103,7 +103,6 @@ p.category {
 .club {
     border: black 1pt solid;
     width: 45vw;
-    height: auto;
     max-width: 94vw;
     margin-left: 3vw;
     margin-top: 3vh;
@@ -128,6 +127,7 @@ p.category {
 
 .row {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     margin-top: 1vh;
     margin-bottom: 1vh;
@@ -146,6 +146,8 @@ p.category {
     padding: 2pt;
     border: solid 1pt black;
     background-color: whitesmoke;
+    
+    width: 100%;
 }
 
 .red {
@@ -164,13 +166,63 @@ p.category {
     visibility: visible;
 }
 
-@media (max-width: 1000px) {
+.club .enable_on_hover {
+    display: none;
+}
+
+.club:hover .enable_on_hover {
+    display: block;
+}
+
+a.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* CLUB SINGLE */
+
+table#members {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    width: 96vw;
+    overflow-x: hidden;
+}
+
+table #position {
+    width: 3vw;
+}
+
+table#members #header {
+    background-color: lightslategray;
+}
+
+table#members th {
+    text-align: left;
+    padding: 10px;
+}
+
+table#members th, table#members td {
+    padding-left: 10px;
+}
+
+table#members tr:nth-of-type(2n) {
+    background-color: lightgray;
+}
+
+#members .text_center {
+    text-align: center;
+}
+
+
+@media (max-width: 1400px) {
     .club {
         width: 95vw;
     }
 
     body {
-        font-size: 12pt;
+        font-size: 14pt;
     }
 
     #smaller_site_top h1 {
@@ -187,6 +239,10 @@ p.category {
 
     .icon_bigger {
         height: 3vh;
+    }
+
+    table#members {
+        font-size: 10pt;
     }
 }
 
