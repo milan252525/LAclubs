@@ -664,5 +664,17 @@
         "tag": "29LCCQL2J",
         "region": "AS",
         "country": ""
+    },
+    {
+        "name": "LA Eagles",
+        "tag": "29Q8CVCJL",
+        "region": "AF",
+        "country": "EGYPT"
+    },
+    {
+        "name": "LA Eagles 2",
+        "tag": "29Q00RVLY",
+        "region": "AF",
+        "country": "EGYPT"
     }
 ]
