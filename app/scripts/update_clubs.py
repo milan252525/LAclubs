@@ -26,18 +26,21 @@ for club in clubs:
         print(e)
         print("API OFFLINE STOPPING...")
         sys.exit()
-
-    club_data = {
-        'name': data['name'],
-        'description': data['description'],
-        'trophies': data['trophies'],
-        'required': data['requiredTrophies'],
-        'type': data['type'],
-        'badge': data['badgeId'],
-        'members': data['members'],
-        'region': club['region'],
-        'country': club['country']
-    }
+    try:
+        club_data = {
+            'name': data['name'],
+            'description': data['description'],
+            'trophies': data['trophies'],
+            'required': data['requiredTrophies'],
+            'type': data['type'],
+            'badge': data['badgeId'],
+            'members': data['members'],
+            'region': club['region'],
+            'country': club['country']
+        }
+    except KeyError:
+        print(f"{club['name']} {tag} KEY ERROR")
+        continue
 
     output[tag] = club_data
     time.sleep(0.3)
