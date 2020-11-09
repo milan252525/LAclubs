@@ -237,10 +237,6 @@ table#members tr:nth-of-type(2n) {
         font-size: 14pt;
     }
 
-    #smaller_site_top {
-        width: 100vw;
-    }
-
     #smaller_site_top h1 {
         font-size: 4vh;
     }
@@ -259,6 +255,8 @@ table#members tr:nth-of-type(2n) {
 
     table#members {
         font-size: 10pt;
+        table-layout: fixed;
+        width: 100%;
     }
 }
 
