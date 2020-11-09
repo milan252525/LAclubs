@@ -7,7 +7,7 @@ import os
 @app.route('/index')
 def index():
     resp = make_response(render_template('index.html'))
-    resp.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' www.google-analytics.com"
+    resp.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' www.google-analytics.com www.googletagmanager.com"
     resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
     resp.headers['X-Content-Type-Options'] = 'nosniff'
     resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
@@ -35,7 +35,7 @@ def clubs():
     clubs = get_clubs.get_clubs(region=region, country=country, type=type)
     
     resp = make_response(render_template('clubs.html', clubs=clubs, title=title))
-    resp.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' www.google-analytics.com"
+    resp.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' www.google-analytics.com www.googletagmanager.com"
     resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
     resp.headers['X-Content-Type-Options'] = 'nosniff'
     resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
@@ -52,7 +52,7 @@ def club():
         title=club['name']
 
     resp = make_response(render_template('club_single.html', club=club, title=title))
-    resp.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' www.google-analytics.com"
+    resp.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' www.google-analytics.com www.googletagmanager.com"
     resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
     resp.headers['X-Content-Type-Options'] = 'nosniff'
     resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
