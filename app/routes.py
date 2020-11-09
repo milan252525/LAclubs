@@ -1,4 +1,4 @@
-from flask import render_template, request, send_from_directory
+from flask import render_template, request, send_from_directory, make_response
 from app import app
 from . import get_clubs
 import os
@@ -6,7 +6,13 @@ import os
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html')
+    resp = make_response(render_template('index.html'))
+    resp.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' www.google-analytics.com"
+    resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    resp.headers['X-Content-Type-Options'] = 'nosniff'
+    resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    resp.headers['X-XSS-Protection'] = '1; mode=block'
+    return resp
 
 @app.route('/clubs')
 def clubs():
@@ -28,16 +34,30 @@ def clubs():
 
     clubs = get_clubs.get_clubs(region=region, country=country, type=type)
     
-    return render_template('clubs.html', clubs=clubs, title=title)
+    resp = make_response(render_template('clubs.html', clubs=clubs, title=title))
+    resp.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' www.google-analytics.com"
+    resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    resp.headers['X-Content-Type-Options'] = 'nosniff'
+    resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    resp.headers['X-XSS-Protection'] = '1; mode=block'
+    return resp
 
 @app.route('/club')
 def club():
     tag = request.args.get('tag', default = None)
     club = get_clubs.get_club(tag)
     if not club['success']:
-        return render_template('club_single.html', club=club, title='ERROR')
+        title='ERROR'
     else:
-        return render_template('club_single.html', club=club, title=club['name'])
+        title=club['name']
+
+    resp = make_response(render_template('club_single.html', club=club, title=title))
+    resp.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' www.google-analytics.com"
+    resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    resp.headers['X-Content-Type-Options'] = 'nosniff'
+    resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    resp.headers['X-XSS-Protection'] = '1; mode=block'
+    return resp
 
 @app.route('/favicon.ico')
 def favicon():
