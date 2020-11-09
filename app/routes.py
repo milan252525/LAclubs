@@ -7,11 +7,6 @@ import os
 @app.route('/index')
 def index():
     resp = make_response(render_template('index.html'))
-    resp.headers['Content-Security-Policy'] = "default-src 'self' www.google-analytics.com www.googletagmanager.com"
-    resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
-    resp.headers['X-Content-Type-Options'] = 'nosniff'
-    resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
-    resp.headers['X-XSS-Protection'] = '1; mode=block'
     return resp
 
 @app.route('/clubs')
@@ -35,11 +30,6 @@ def clubs():
     clubs = get_clubs.get_clubs(region=region, country=country, type=type)
     
     resp = make_response(render_template('clubs.html', clubs=clubs, title=title))
-    resp.headers['Content-Security-Policy'] = "default-src 'self' www.google-analytics.com www.googletagmanager.com"
-    resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
-    resp.headers['X-Content-Type-Options'] = 'nosniff'
-    resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
-    resp.headers['X-XSS-Protection'] = '1; mode=block'
     return resp
 
 @app.route('/club')
@@ -52,13 +42,16 @@ def club():
         title=club['name']
 
     resp = make_response(render_template('club_single.html', club=club, title=title))
-    resp.headers['Content-Security-Policy'] = "default-src 'self' www.google-analytics.com www.googletagmanager.com"
-    resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
-    resp.headers['X-Content-Type-Options'] = 'nosniff'
-    resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
-    resp.headers['X-XSS-Protection'] = '1; mode=block'
     return resp
 
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+@app.after_request
+def add_header(resp):
+    resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    resp.headers['X-Content-Type-Options'] = 'nosniff'
+    resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    resp.headers['X-XSS-Protection'] = '1; mode=block'
+    return resp
