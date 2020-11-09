@@ -11,6 +11,7 @@ body {
     font-size: 20pt;
     background-color: white;
     margin: 0;
+    width: 100%;
 }
 
 #site_top {
