@@ -222,6 +222,10 @@ table#members tr:nth-of-type(2n) {
     content: " ↓";
 }
 
+.error {
+    margin-left: 2vw;
+}
+
 
 @media (max-width: 1400px) {
     .club {
