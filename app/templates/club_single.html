@@ -11,7 +11,7 @@
         </colgroup>
         <thead>
             <tr id="header">
-                <th class="text_center">#</th>
+                <th class="text_center no-sort">#</th>
                 <th>NAME</th>
                 <th>ROLE</th>
                 <th>TROPHIES</th>
@@ -20,9 +20,7 @@
         <tbody>
         {% for member in club.members %}
         <tr id="{{ member.tag.lower().strip('#') }}">
-            <td class="text_center" data-sort-value="{{ loop.index }}"> 
-                {{ loop.index }}
-            </td>
+            <td class="text_center"> {{ loop.index }} </td>
             <td class="center" data-sort-value="{{ member.name }}">
                 <img class="icon_bigger" src="{{ url_for('static', filename='img/icons/' + member.icon.id|string + '.png') }}" alt="profile icon">
                 <span> {{ member.name }} </span>
