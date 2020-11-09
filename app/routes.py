@@ -35,7 +35,7 @@ def club():
     tag = request.args.get('tag', default = None)
     club = get_clubs.get_club(tag)
     if not club['success']:
-        return render_template('club_single.html', club=None, title='ERROR')
+        return render_template('club_single.html', club=club, title='ERROR')
     else:
         return render_template('club_single.html', club=club, title=club['name'])
 
