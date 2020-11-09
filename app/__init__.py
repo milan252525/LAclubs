@@ -12,6 +12,6 @@ csp = {
     ]
 } 
 
-Talisman(app, content_security_policy=csp,)
+Talisman(app, content_security_policy=csp, content_security_policy_nonce_in=['script-src'])
 
 from app import routes
