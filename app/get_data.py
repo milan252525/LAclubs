@@ -122,3 +122,32 @@ def get_club(tag):
 
     print("time to build club:", time() - start)
     return output
+
+def get_all_players():
+    start = time()
+    SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+    json_url = os.path.join(SITE_ROOT, "data", "club_data.json")
+    with open(json_url) as f:
+        all = json.load(f)
+
+    result = []
+    for club_tag in all:
+        badge = str(all[club_tag]['badge'] - 8000000)
+        club_name = all[club_tag]['name']
+        for member in all[club_tag]['members']:
+            output = {
+                'name': member['name'],
+                'tag': member['tag'],
+                'trophies': member['trophies'],
+                'club_name': club_name,
+                'club_tag': club_tag,
+                'league_badge': str(get_rank_id(member['trophies'])),
+                'club_badge': badge,
+                'icon': member['icon']['id']
+            }
+            result.append(output)
+    
+    result.sort(key=lambda x: x['trophies'], reverse=True)
+
+    print("time to build lb:", time() - start)
+    return result

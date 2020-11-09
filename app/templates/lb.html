@@ -1,0 +1,44 @@
+{% extends "lb_base.html" %}
+
+{% block content %}
+<div id="lb_data">
+    <table id="members">
+        <colgroup>
+            <col id="position">
+            <col id="name">
+            <col id="club">
+            <col id="trophies">
+        </colgroup>
+        <thead>
+            <tr id="header">
+                <th class="text_center">#</th>
+                <th>NAME</th>
+                <th>CLUB</th>
+                <th>TROPHIES</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for player in players %}
+        <tr id="{{ player.tag.lower().strip('#') }}">
+            <td class="text_center"> {{ loop.index }} </td>
+            <td class="center">
+                <img class="icon_bigger" src="{{ url_for('static', filename='img/icons/' + player.icon|string + '.png') }}" alt="profile icon">
+                <span> {{ player.name }} </span>
+            </td>
+            <td >
+                <div class="center">
+                    <img class="icon_bigger" src="{{ url_for('static', filename='img/badges/' + player.club_badge + '.png') }}" alt="club badge">
+                    <span> {{ player.club_name }} </span>
+                </div>
+            </td>
+            <td class="center">
+                <img class="icon_bigger" src="{{ url_for('static', filename='img/leagues/league_' + player.league_badge + '.png') }}" alt="league badge">
+                <span> {{ player.trophies }} </span>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

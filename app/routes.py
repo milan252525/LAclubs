@@ -1,6 +1,6 @@
 from flask import render_template, request, send_from_directory, make_response
 from app import app
-from . import get_clubs
+from . import get_data
 import os
 
 @app.route('/')
@@ -27,7 +27,7 @@ def clubs():
         
     title = title.replace('EL', 'EL ').replace('REPUBLIC', ' REPUBLIC')
 
-    clubs = get_clubs.get_clubs(region=region, country=country, type=type)
+    clubs = get_data.get_clubs(region=region, country=country, type=type)
     
     resp = make_response(render_template('clubs.html', clubs=clubs, title=title))
     return resp
@@ -35,13 +35,20 @@ def clubs():
 @app.route('/club')
 def club():
     tag = request.args.get('tag', default = None)
-    club = get_clubs.get_club(tag)
+    club = get_data.get_club(tag)
     if not club['success']:
         title='ERROR'
     else:
         title=club['name']
 
     resp = make_response(render_template('club_single.html', club=club, title=title))
+    return resp
+
+@app.route('/lb')
+def lb():
+    players = get_data.get_all_players()
+
+    resp = make_response(render_template('lb.html', players=players))
     return resp
 
 @app.route('/favicon.ico')
