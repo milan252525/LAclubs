@@ -216,11 +216,11 @@ table#members tr:nth-of-type(2n) {
 }
 
 #members th.sorted.ascending:after {
-	content: " &uarr;";
+	content: " ↑";
 }
 
 #members th.sorted.descending:after {
-    content: " &darr;";
+    content: " ↓";
 }
 
 
