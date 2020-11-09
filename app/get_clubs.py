@@ -99,9 +99,15 @@ def get_club(tag):
 
     club_tag = tag.upper().strip("#")
 
-    club = all[club_tag]
+    try:
+        club = all[club_tag]
+    except KeyError:
+        return {
+            'success' : False
+        }
 
     output = {
+        'success' : True,
         'name': club['name'],
         'tag' : club_tag,
         'badge': str(club['badge'] - 8000000),

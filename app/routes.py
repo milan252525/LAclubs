@@ -33,9 +33,11 @@ def clubs():
 @app.route('/club')
 def club():
     tag = request.args.get('tag', default = None)
-    member = request.args.get('member', default = None)
     club = get_clubs.get_club(tag)
-    return render_template('club_single.html', club=club, title=club['name'])
+    if not club['success']:
+        return render_template('club_single.html', club=None, title='CLUB NOT FOUND')
+    else:
+        return render_template('club_single.html', club=club, title=club['name'])
 
 @app.route('/favicon.ico')
 def favicon():
