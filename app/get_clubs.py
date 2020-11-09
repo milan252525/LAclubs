@@ -103,7 +103,8 @@ def get_club(tag):
         club = all[club_tag]
     except KeyError:
         return {
-            'success' : False
+            'success' : False,
+            'badge': 'none'
         }
 
     output = {
