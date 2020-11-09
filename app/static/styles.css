@@ -215,6 +215,14 @@ table#members tr:nth-of-type(2n) {
     text-align: center;
 }
 
+#members th.sorted.ascending:after {
+	content: " &uarr;";
+}
+
+#members th.sorted.descending:after {
+    content: " &darr;";
+}
+
 
 @media (max-width: 1400px) {
     .club {
