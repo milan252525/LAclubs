@@ -47,7 +47,7 @@ def club():
 @app.route('/lb')
 def lb():
     players = get_data.get_all_players()
-    limit = request.args.get('limit', default = -1)
+    limit = int(request.args.get('limit', default = -1))
     if limit > 0:
         players = players[:limit]
 
