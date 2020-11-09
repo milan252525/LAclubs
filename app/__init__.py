@@ -7,14 +7,15 @@ csp = {
     "default-src" : "'self'",
     'script-src': [ 
         "'self'",
-        '*.googleanalytics.com',
-        '*.google-analytics.com',
+        "*.googleanalytics.com",
+        "*.google-analytics.com",
         "www.googletagmanager.com"
     ],
     'img-src' : [
         "'self'",
         "www.google-analytics.com"
-    ]
+    ],
+    'connect-src' : "*.google-analytics.com"
 } 
 
 Talisman(app, content_security_policy=csp)
