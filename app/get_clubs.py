@@ -83,6 +83,13 @@ def get_clubs(region, country, type):
     print("time to build clubs:", time() - start)
     return result
 
+role_sort_values = {
+    "president" : 0,
+    "vicePresident" : 1,
+    "senior" : 2,
+    "member" : 3,
+}
+
 def get_club(tag):
     start = time()
     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
@@ -103,6 +110,7 @@ def get_club(tag):
 
     for member in output['members']:
         member['league_badge'] = str(get_rank_id(member['trophies']))
+        member['role_sort'] = role_sort_values[member['role']]
         member['role'] = member['role'].replace('eP', 'e-P').title()
 
     print("time to build club:", time() - start)

@@ -9,26 +9,34 @@
             <col id="role">
             <col id="trophies">
         </colgroup>
-        <tr id="header">
-            <th class="text_center">#</th>
-            <th>NAME</th>
-            <th>ROLE</th>
-            <th>TROPHIES</th>
-        </tr>
+        <thead>
+            <tr id="header">
+                <th class="text_center">#</th>
+                <th>NAME</th>
+                <th>ROLE</th>
+                <th>TROPHIES</th>
+            </tr>
+        </thead>
+        <tbody>
         {% for member in club.members %}
         <tr id="{{ member.tag.lower().strip('#') }}">
-            <td class="text_center"> {{ loop.index }}</td>
-            <td class="center">
+            <td class="text_center" data-sort-value="{{ loop.index }}"> 
+                {{ loop.index }}
+            </td>
+            <td class="center" data-sort-value="{{ member.name }}">
                 <img class="icon_bigger" src="{{ url_for('static', filename='img/icons/' + member.icon.id|string + '.png') }}" alt="profile icon">
                 <span> {{ member.name }} </span>
             </td>
-            <td> {{ member.role }}</td>
-            <td class="center">
+            <td data-sort-value="{{ member.role_sort }}"> 
+                {{ member.role }}
+            </td>
+            <td class="center" data-sort-value="{{ member.trophies }}">
                 <img class="icon_bigger" src="{{ url_for('static', filename='img/leagues/league_' + member.league_badge + '.png') }}" alt="league badge">
                 <span> {{ member.trophies }} </span>
             </td>
         </tr>
         {% endfor %}
+        </tbody>
     </table>
 </div>
 <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
