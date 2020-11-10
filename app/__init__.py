@@ -9,7 +9,8 @@ csp = {
         "'self'",
         "*.googleanalytics.com",
         "*.google-analytics.com",
-        "www.googletagmanager.com"
+        "www.googletagmanager.com",
+        "*.googleapis.com"
     ],
     'img-src' : [
         "'self'",
