@@ -664,5 +664,11 @@
         "tag": "29Q00RVLY",
         "region": "AF",
         "country": "EGYPT"
+    },
+    {
+        "name": "LA DeRuben",
+        "tag": "298GQU8QG",
+        "region": "LATAM",
+        "country": "ARGENTINA"
     }
 ]
