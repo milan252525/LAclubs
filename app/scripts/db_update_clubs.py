@@ -42,7 +42,7 @@ for club in clubs:
         print("API OFFLINE STOPPING...")
         sys.exit()
     try:
-        pres, vp_count, sen_count = get_pres_vp_sen(club['members'])
+        pres, vp_count, sen_count = get_pres_vp_sen(data['members'])
         club_data = {
             'name': data['name'],
             'tag': tag,
