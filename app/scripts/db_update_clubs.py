@@ -15,6 +15,19 @@ except brawlstats.errors.ServerError:
 myclient = pymongo.MongoClient("MONGO/")
 collection = myclient['laclubs']['clubs']
 
+def get_pres_vp_sen(members):
+    pres = ""
+    vp = 0
+    sen = 0
+    for m in members:
+        if m['role'] == "president":
+            pres = m['name']
+        elif m['role'] == "vicePresident":
+            vp += 1
+        elif m['role'] == "senior":
+            sen += 1
+    return pres, vp, sen
+
 with open("../data/clubs_input.json", "r") as clubs_file:
     clubs = json.load(clubs_file)
 
@@ -29,17 +42,23 @@ for club in clubs:
         print("API OFFLINE STOPPING...")
         sys.exit()
     try:
+        pres, vp_count, sen_count = get_pres_vp_sen(club['members'])
         club_data = {
             'name': data['name'],
             'tag': tag,
             'description': data['description'],
             'trophies': data['trophies'],
-            'required': data['requiredTrophies'],
-            'type': data['type'],
+            'required_trophies': data['requiredTrophies'],
+            'type': data['type'].lower(),
             'badge': data['badgeId'],
             'members': data['members'],
+            'member_count' : len(data['members']),
             'region': club['region'],
-            'country': club['country']
+            'country': club['country'],
+            'average': (int(data['trophies']/len(data['members'])) if len(data['members']) != 0 else 0),
+            'president': pres,
+            'vp_count': vp_count,
+            'sen_count': sen_count
         }
     except KeyError:
         print(f"{club['name']} {tag} KEY ERROR")

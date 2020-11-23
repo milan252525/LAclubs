@@ -3,3 +3,4 @@ flask-talisman
 brawlstats
 gunicorn
 pymongo
+Flask-PyMongo

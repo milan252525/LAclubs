@@ -1,7 +1,10 @@
 from flask import Flask
 from flask_talisman import Talisman
+from flask_pymongo import PyMongo
 
 app = Flask(__name__)
+app.config["MONGO_URI"] = "MONGO/laclubs"
+mongo = PyMongo(app)
 
 csp = {
     "default-src" : "'self'",
