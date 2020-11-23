@@ -46,7 +46,7 @@ def get_clubs(region, country, type):
     else:
         filter = {}
     
-    result = mongo.db.clubs.find(filter)
+    result = list(mongo.db.clubs.find(filter))
 
     for club in result:
         club['required_trophies_id'] = str(get_rank_id(club['required_trophies']))
@@ -74,6 +74,7 @@ def get_club(tag):
             'badge': 'none'
         }
 
+    club['success'] = True
     club['badge'] = str(club['badge'] - 8000000)
     for member in club['members']:
         member['league_badge'] = str(get_rank_id(member['trophies']))
