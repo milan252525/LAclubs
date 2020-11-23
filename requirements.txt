@@ -2,3 +2,4 @@ flask
 flask-talisman
 brawlstats
 gunicorn
+pymongo
