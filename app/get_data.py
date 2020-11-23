@@ -46,7 +46,7 @@ def get_clubs(region, country, type):
     else:
         filter = {}
     
-    result = mongo.clubs.find(filter)
+    result = mongo.db.clubs.find(filter)
 
     for club in result:
         club['required_trophies_id'] = str(get_rank_id(club['required']))
@@ -66,7 +66,7 @@ role_sort_values = {
 def get_club(tag):
     regex = re.compile('[^a-zA-Z0-9]')
     tag_safe = regex.sub('', tag.upper().strip("#"))
-    club = mongo.clubs.find_one({"tag": tag_safe})
+    club = mongo.db.clubs.find_one({"tag": tag_safe})
 
     if club is None:
         return {
@@ -82,7 +82,7 @@ def get_club(tag):
     return club
 
 def get_all_players():
-    clubs = mongo.clubs.find()
+    clubs = mongo.db.clubs.find()
     result = []
     for club in clubs:
         badge = str(club['badge'] - 8000000)
