@@ -49,7 +49,7 @@ def get_clubs(region, country, type):
     result = mongo.db.clubs.find(filter)
 
     for club in result:
-        club['required_trophies_id'] = str(get_rank_id(club['required']))
+        club['required_trophies_id'] = str(get_rank_id(club['required_trophies']))
         club['badge'] = str(club['badge'] - 8000000)
 
     result.sort(key=lambda x: x['trophies'], reverse=True)
