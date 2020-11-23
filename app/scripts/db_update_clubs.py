@@ -1,6 +1,5 @@
 import time
 import brawlstats
-import json
 import sys
 import pymongo
 
@@ -13,7 +12,7 @@ except brawlstats.errors.ServerError:
     sys.exit()
 
 myclient = pymongo.MongoClient("MONGO/")
-collection = myclient['laclubs']['clubs']
+db = myclient['laclubs']
 
 def get_pres_vp_sen(members):
     pres = ""
@@ -28,8 +27,7 @@ def get_pres_vp_sen(members):
             sen += 1
     return pres, vp, sen
 
-with open("../data/clubs_input.json", "r") as clubs_file:
-    clubs = json.load(clubs_file)
+clubs = db['tracked_clubs'].find()
 
 for club in clubs:
     tag = club['tag']
@@ -64,7 +62,7 @@ for club in clubs:
         print(f"{club['name']} {tag} KEY ERROR")
         continue
 
-    collection.update_one(
+    db['clubs'].update_one(
         {'tag': tag},
         {'$set': club_data},
         upsert=True
