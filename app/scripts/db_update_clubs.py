@@ -13,7 +13,7 @@ except brawlstats.errors.ServerError:
     sys.exit()
 
 myclient = pymongo.MongoClient("MONGO/")
-db = myclient['laclubs']
+collection = myclient['laclubs']['clubs']
 
 with open("../data/clubs_input.json", "r") as clubs_file:
     clubs = json.load(clubs_file)
@@ -45,7 +45,7 @@ for club in clubs:
         print(f"{club['name']} {tag} KEY ERROR")
         continue
 
-    db.clubs.update_one(
+    collection.update_one(
         {'tag': tag},
         club_data,
         upsert=True
