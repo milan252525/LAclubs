@@ -45,12 +45,10 @@ for club in clubs:
         print(f"{club['name']} {tag} KEY ERROR")
         continue
 
-    db.clubs.update(
+    db.clubs.update_one(
         {'tag': tag},
         club_data,
         upsert=True
     )
 
     time.sleep(0.3)
-
-
