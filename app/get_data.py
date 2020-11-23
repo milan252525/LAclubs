@@ -52,7 +52,10 @@ def get_clubs(region, country, type):
         club['required_trophies_id'] = str(get_rank_id(club['required_trophies']))
         club['badge'] = str(club['badge'] - 8000000)
 
-    result.sort(key=lambda x: x['trophies'], reverse=True)
+    if type == "low":
+        result.sort(key=lambda x: x['member_count'])
+    else:
+        result.sort(key=lambda x: x['trophies'], reverse=True)
     return result
         
 
