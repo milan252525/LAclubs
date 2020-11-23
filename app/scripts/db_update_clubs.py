@@ -48,7 +48,7 @@ for club in clubs:
     db.clubs.update(
         {'tag': tag},
         club_data,
-        {'upsert': True }
+        upsert=True
     )
 
     time.sleep(0.3)
