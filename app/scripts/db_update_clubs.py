@@ -47,7 +47,7 @@ for club in clubs:
 
     collection.update_one(
         {'tag': tag},
-        club_data,
+        {'$set': club_data},
         upsert=True
     )
 
