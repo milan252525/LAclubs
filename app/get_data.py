@@ -91,6 +91,7 @@ def get_all_players():
     for club in clubs:
         badge = str(club['badge'] - 8000000)
         for member in club['members']:
+            member['name'] = member['name'].replace("﷽", "_")
             member['club_name'] = club['name']
             member['club_tag'] = club['tag']
             member['league_badge'] = str(get_rank_id(member['trophies']))
