@@ -11,23 +11,26 @@
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     </head>
     <body>
+        
         <div id="smaller_site_top">
             <a href="/index"><img src="{{ url_for('static', filename='img/la_logo.png') }}" alt="LA logo"></a>
             <h1>{{ title }}</h1>
         </div>
 
-        <a href="lb?{{ lb_link }}&limit=100" class="link">
-            <div class="button_lb">
-                <p>GO BACK</p>  
-            </div>
-        </a>
-        {% if lb_link != "" %}
-        <a href="lb?{{ lb_link }}&limit=100" class="link">
-            <div class="button_lb">
-                <img class="icon" src="{{ url_for('static', filename='img/trophy.png') }}" alt="club trophies icon"> <p>TROPHY LEADERBOARD</p>  
-            </div>
-        </a>
-        {% endif %}
+        <div class="row">
+            <a href="index" class="link">
+                <div class="button_lb">
+                    <p>GO BACK</p>  
+                </div>
+            </a>
+            {% if lb_link != "" %}
+            <a href="lb?{{ lb_link }}&limit=100" class="link">
+                <div class="button_lb">
+                    <img class="icon" src="{{ url_for('static', filename='img/trophy.png') }}" alt="club trophies icon"> <p>TROPHY LEADERBOARD</p>  
+                </div>
+            </a>
+            {% endif %}
+        </div>
 
         <div class="club_area">
             {% block content %} {% endblock %}
