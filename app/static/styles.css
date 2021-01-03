@@ -33,6 +33,18 @@ body {
     justify-content: left;
 }
 
+#smaller_site_buttons {
+    background-color: gray;
+    top: 5vh;
+    height: 10vh;
+    width: 100%;
+    
+    display: inline-flex;
+    align-items: left;
+    justify-content: left;
+}
+
+
 #site_top h1, #smaller_site_top h1 {
     color: white;
     font-size: 8vh;

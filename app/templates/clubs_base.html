@@ -17,11 +17,13 @@
         </div>
 
         {% if lb_link != "" %}
-        <a href="lb?{{ lb_link }}&limit=100" class="link">
-            <div class="row">
-                <img class="icon" src="{{ url_for('static', filename='img/trophy.png') }}" alt="club trophies icon"> TROPHY LEADERBOARD
-            </div>
-        </a>
+        <div id="smaller_site_buttons">
+            <a href="lb?{{ lb_link }}&limit=100" class="link">
+                <div class="row">
+                    <img class="icon" src="{{ url_for('static', filename='img/trophy.png') }}" alt="club trophies icon"> <p>TROPHY LEADERBOARD</p>  
+                </div>
+            </a>
+        </div>
         {% endif %}
 
         <div class="club_area">
