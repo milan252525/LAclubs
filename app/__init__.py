@@ -5,6 +5,8 @@ from flask_discord import DiscordOAuth2Session
 
 app = Flask(__name__)
 
+app.secret_key = b"DtdVYM9lFQH8GTudWM2u252525milan25"
+
 app.config["MONGO_URI"] = "MONGO/laclubs"
 app.config["DISCORD_CLIENT_ID"] = 795325486242857000    # Discord client ID.
 app.config["DISCORD_CLIENT_SECRET"] = "SECRET"                # Discord client secret.
