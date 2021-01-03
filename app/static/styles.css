@@ -35,8 +35,8 @@ body {
 
 #smaller_site_buttons {
     background-color: gray;
-    top: 5vh;
-    height: 10vh;
+    top: 10vh;
+    height: 5vh;
     width: 100%;
     
     display: inline-flex;
