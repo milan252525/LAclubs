@@ -85,8 +85,18 @@ def get_club(tag):
         member['role'] = member['role'].replace('eP', 'e-P').title()
     return club
 
-def get_all_players():
-    clubs = mongo.db.clubs.find()
+def get_all_players(region, country):
+    if region is not None:
+        regex = re.compile('[^a-zA-Z]')
+        region_safe = regex.sub('', region)
+        filter = {"region" : region_safe.upper()}
+    elif country is not None:
+        regex = re.compile('[^a-zA-Z]')
+        country_safe = regex.sub('', country)
+        filter = {"country" : country_safe.upper()}
+    else:
+        filter = {}
+    clubs = mongo.db.clubs.find(filter)
     result = []
     for club in clubs:
         badge = str(club['badge'] - 8000000)

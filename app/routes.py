@@ -47,7 +47,10 @@ def club():
 
 @app.route('/lb')
 def lb():
-    players = get_data.get_all_players()
+    region = request.args.get('region', default = None)
+    country = request.args.get('country', default = None)
+
+    players = get_data.get_all_players(region=region, country=country)
     try:
         limit = int(request.args.get('limit', default = -1))
     except ValueError:
