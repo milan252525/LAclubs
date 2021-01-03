@@ -80,7 +80,7 @@ a.button {
 }
 
 .button_lb {
-    width: 15%;
+    width: auto;
     border: 1pt solid gray;
     background-color: lightslategray;
 
@@ -90,6 +90,10 @@ a.button {
     display: inline-flex;
     justify-content: left;
     align-items: center;
+}
+
+.button_lb p {
+    font-size: 75%;
 }
 
 .button:hover {
