@@ -4,5 +4,4 @@ brawlstats
 gunicorn
 pymongo
 Flask-PyMongo
-Flask-Discord==0.1.63
-pyjwt==1.7.1
+git+https://github.com/thec0sm0s/Flask-Discord.git@dev
