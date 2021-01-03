@@ -83,6 +83,13 @@ a.button {
     width: 15%;
     border: 1pt solid gray;
     background-color: lightslategray;
+
+    margin-left: 3vw;
+    margin-top: 1vw;
+
+    display: inline-flex;
+    justify-content: left;
+    align-items: center;
 }
 
 .button:hover {
