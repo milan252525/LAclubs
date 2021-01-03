@@ -101,7 +101,7 @@ a.button {
     align-items: center;
 }
 
-.button_lb:nth-of-type(1) {
+.button_row:first-child {
     margin-left: 3vw;
 }
 
