@@ -4,3 +4,4 @@ brawlstats
 gunicorn
 pymongo
 Flask-PyMongo
+Flask-Discord
