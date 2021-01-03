@@ -81,6 +81,7 @@ a.button {
 
 .button_lb {
     width: auto;
+    height: 2vh;
     border: 1pt solid gray;
 
     margin-left: 3vw;
@@ -91,6 +92,10 @@ a.button {
     display: inline-flex;
     justify-content: left;
     align-items: center;
+}
+
+.button_lb:hover {
+    background-color: lightgray;
 }
 
 .button_lb p {
