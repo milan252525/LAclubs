@@ -85,9 +85,9 @@ a.button {
 
     margin-left: 3vw;
     margin-top: 0.5vw;
+    margin-bottom: 0;
     padding-left: 1vw;
     padding-right: 1vw;
-    padding-top: 0;
 
     display: inline-flex;
     justify-content: left;
@@ -266,6 +266,10 @@ table#members tr:nth-of-type(2n) {
 
     #smaller_site_top img {
         height: 5vh;
+    }
+
+    .button_lb {
+        margin-top: 2vh;
     }
 
     .button {
