@@ -10,8 +10,7 @@ app.secret_key = b"DtdVYM9lFQH8GTudWM2u252525milan25"
 app.config["MONGO_URI"] = "MONGO/laclubs"
 app.config["DISCORD_CLIENT_ID"] = 795325486242857000    # Discord client ID.
 app.config["DISCORD_CLIENT_SECRET"] = "SECRET"                # Discord client secret.
-app.config["DISCORD_REDIRECT_URI"] = "/callback"                 # URL to your callback endpoint.
-app.config["DISCORD_BOT_TOKEN"] = ""                    # Required to access BOT resources.
+app.config["DISCORD_REDIRECT_URI"] = "https://www.laclubs.net/me/"                 # URL to your callback endpoint.
 
 discord = DiscordOAuth2Session(app)
 
