@@ -28,7 +28,7 @@ def clubs():
         lb_link = "region=" + region.lower()
     else:
         title = f"{country.upper()} CLUBS"
-        lb_link = "country=" + region.lower()
+        lb_link = "country=" + country.lower()
         
     title = title.replace('EL', 'EL ').replace('REPUBLIC', ' REPUBLIC')
 
