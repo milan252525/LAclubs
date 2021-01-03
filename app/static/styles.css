@@ -33,18 +33,6 @@ body {
     justify-content: left;
 }
 
-#smaller_site_buttons {
-    background-color: gray;
-    top: 10vh;
-    height: 5vh;
-    width: 100%;
-    
-    display: inline-flex;
-    align-items: left;
-    justify-content: left;
-}
-
-
 #site_top h1, #smaller_site_top h1 {
     color: white;
     font-size: 8vh;
@@ -89,6 +77,12 @@ a.button {
     text-decoration: none;
     color: white;
     text-align: center;
+}
+
+.button_lb {
+    width: 15%;
+    border: 1pt solid gray;
+    background-color: lightslategray;
 }
 
 .button:hover {
