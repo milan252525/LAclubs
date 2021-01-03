@@ -89,8 +89,7 @@ a.button {
 .button_lb {
     width: auto;
     border: 1pt solid gray;
-
-    margin-left: 3vw;
+    
     margin-top: 0.5vw;
     margin-bottom: 0;
     margin-right: 2vw;
@@ -100,6 +99,10 @@ a.button {
     display: inline-flex;
     justify-content: left;
     align-items: center;
+}
+
+.button_lb:first {
+    margin-left: 3vw;
 }
 
 .button_lb:hover {
