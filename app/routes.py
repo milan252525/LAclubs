@@ -59,7 +59,7 @@ def lb():
     title = f"LA LEADERBOARD"
     if region is not None:
         title = f"{region.upper()} LEADERBOARD"
-    else:
+    elif country is not None:
         title = f"{country.upper()} LEADERBOARD"
 
     try:
