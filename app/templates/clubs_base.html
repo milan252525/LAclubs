@@ -16,6 +16,11 @@
             <h1>{{ title }}</h1>
         </div>
 
+        <a href="lb?{{ lb_link }}&limit=100" class="link">
+            <div class="button_lb">
+                <p>GO BACK</p>  
+            </div>
+        </a>
         {% if lb_link != "" %}
         <a href="lb?{{ lb_link }}&limit=100" class="link">
             <div class="button_lb">
