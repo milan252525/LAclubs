@@ -16,6 +16,8 @@ def clubs():
     country = request.args.get('country', default = None)
     type = request.args.get('type', default = None)
 
+    lb_link = ""
+
     if type is None and country is None and region is None:
         type = "all"
 
@@ -23,14 +25,16 @@ def clubs():
         title = f"{type.upper()} CLUBS"
     elif region is not None:
         title = f"{region.upper()} CLUBS"
+        lb_link = "region=" + region.lower()
     else:
         title = f"{country.upper()} CLUBS"
+        lb_link = "country=" + region.lower()
         
     title = title.replace('EL', 'EL ').replace('REPUBLIC', ' REPUBLIC')
 
     clubs = get_data.get_clubs(region=region, country=country, type=type)
     
-    resp = make_response(render_template('clubs.html', clubs=clubs, title=title))
+    resp = make_response(render_template('clubs.html', clubs=clubs, title=title, lb_link=lb_link))
     return resp
 
 @app.route('/club')
