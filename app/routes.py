@@ -70,7 +70,7 @@ def add_header(resp):
     resp.headers['X-XSS-Protection'] = '1; mode=block'
     return resp
 
-@app.route("/login/")
+''' @app.route("/login/")
 def login():
     return discord.create_session(scope=["identify"])
 
@@ -95,4 +95,4 @@ def callback():
 
 @app.errorhandler(Unauthorized)
 def redirect_unauthorized(e):
-    return redirect(url_for("login"))
+    return redirect(url_for("login")) '''
