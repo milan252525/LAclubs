@@ -18,13 +18,13 @@
         </div>
 
         <div class="button_row">
-            <a href="index" class="link">
+            <!-- <a href="index" class="link">
                 <div class="button_lb">
-                    <p>GO BACK</p>  
+                    <p>HOME</p>  
                 </div>
-            </a>
+            </a> -->
             {% if lb_link != "" %}
-            <a href="lb?{{ lb_link }}&limit=100" class="link">
+            <a href="lb?{{ lb_link }}&limit=200" class="link">
                 <div class="button_lb">
                     <img class="icon" src="{{ url_for('static', filename='img/trophy.png') }}" alt="club trophies icon"> <p>TROPHY LEADERBOARD</p>  
                 </div>
