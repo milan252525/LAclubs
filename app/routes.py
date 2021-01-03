@@ -72,7 +72,7 @@ def add_header(resp):
 
 @app.route("/login/")
 def login():
-    return discord.create_session()
+    return discord.create_session(scope=["identify"])
 
 @app.route("/me/")
 @requires_authorization
