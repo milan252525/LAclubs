@@ -81,13 +81,13 @@ a.button {
 
 .button_lb {
     width: auto;
-    height: 80%;
     border: 1pt solid gray;
 
     margin-left: 3vw;
     margin-top: 0.5vw;
     padding-left: 1vw;
     padding-right: 1vw;
+    padding-top: 0;
 
     display: inline-flex;
     justify-content: left;
