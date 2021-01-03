@@ -101,7 +101,7 @@ a.button {
     align-items: center;
 }
 
-.button_row:first-child {
+.button_row a:first-child .button_lb {
     margin-left: 3vw;
 }
 
