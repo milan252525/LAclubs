@@ -55,6 +55,13 @@ def lb():
     country = request.args.get('country', default = None)
 
     players = get_data.get_all_players(region=region, country=country)
+
+    title = f"LA LEADERBOARD"
+    if region is not None:
+        title = f"{region.upper()} LEADERBOARD"
+    else:
+        title = f"{country.upper()} LEADERBOARD"
+
     try:
         limit = int(request.args.get('limit', default = -1))
     except ValueError:
@@ -62,7 +69,7 @@ def lb():
     if limit > 0:
         players = players[:limit]
 
-    resp = make_response(render_template('lb.html', players=players))
+    resp = make_response(render_template('lb.html', players=players, title=title))
     return resp
 
 @app.route('/favicon.ico')
