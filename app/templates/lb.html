@@ -18,27 +18,86 @@
             </tr>
         </thead>
         <tbody>
-        {% for player in players %}
-        <tr id="{{ player.tag.lower().strip('#') }}">
-            <td class="text_center"> {{ loop.index }} </td>
-            <td class="center">
-                <img class="icon_bigger" src="{{ url_for('static', filename='img/icons/' + player.icon|string + '.png') }}" alt="profile icon">
-                <span> {{ player.name }} </span>
-            </td>
-            <td >
-                <div class="center">
-                    <img class="icon_bigger" src="{{ url_for('static', filename='img/badges/' + player.club_badge + '.png') }}" alt="club badge">
-                    <span> {{ player.club_name }} </span>
-                </div>
-            </td>
-            <td class="center">
-                <img class="icon_bigger" src="{{ url_for('static', filename='img/leagues/league_' + player.league_badge + '.png') }}" alt="league badge">
-                <span> {{ player.trophies }} </span>
-            </td>
-        </tr>
-        {% endfor %}
         </tbody>
     </table>
 </div>
+
+<!-- <tr id="{{ player.tag.lower().strip('#') }}">
+    <td class="text_center"> {{ loop.index }} </td>
+    <td class="center">
+        <img class="icon_bigger" src="{{ url_for('static', filename='img/icons/' + player.icon|string + '.png') }}" alt="profile icon">
+        <span> {{ player.name }} </span>
+    </td>
+    <td >
+        <div class="center">
+            <img class="icon_bigger" src="{{ url_for('static', filename='img/badges/' + player.club_badge + '.png') }}" alt="club badge">
+            <span> {{ player.club_name }} </span>
+        </div>
+    </td>
+    <td class="center">
+        <img class="icon_bigger" src="{{ url_for('static', filename='img/leagues/league_' + player.league_badge + '.png') }}" alt="league badge">
+        <span> {{ player.trophies }} </span>
+    </td>
+</tr> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script_lb.js') }}"></script>
+<script>
+    const limit = {{ limit }};
+    const trophy_icon = {{ url_for('static', filename='img/icons/') }};
+    const badge_icon = {{ url_for('static', filename='img/badges/') }};
+    const league_icon = {{ url_for('static', filename='img/leagues/league_') }};
+
+    $( document ).ready(() => {
+        fetch({{ request_url }})
+        .then(response => response.json())
+        .then(players => {
+            players.forEach((player, index) => {
+                $('#members').find('tbody')
+                    .append( $('<tr>')
+                        .attr('id', (player['tag'].toLowerCase()).replace('#', ''))
+                        .append( $('<td>')
+                            .attr('class', 'text_center')
+                            .text(index+1)
+                        )
+                        .append( $('<td>')
+                            .attr('class', 'center')
+                            .append( $('<img>')
+                                .attr('class', 'icon_bigger')
+                                .attr('src', trophy_icon + player['icon'] + '.png')
+                                .attr('alt', 'profile icon')
+                            )
+                            .append( $('<span>')
+                                .text(player['name'])
+                            )
+                        )
+                        .append( $('<td>')
+                            .attr('class', 'center')
+                            .append( $('<img>')
+                                .attr('class', 'icon_bigger')
+                                .attr('src', badge_icon + player['club_badge'] + '.png')
+                                .attr('alt', 'club badge')
+                            )
+                            .append( $('<span>')
+                                .text(player['club_name'])
+                            )
+                        )
+                        .append( $('<td>')
+                            .attr('class', 'center')
+                            .append( $('<img>')
+                                .attr('class', 'icon_bigger')
+                                .attr('src', league_icon + player['league_badge'] + '.png')
+                                .attr('alt', 'league badge')
+                            )
+                            .append( $('<span>')
+                                .text(player['trophies'])
+                            )
+                        )
+                    );
+            })
+        })
+    });
+</script>
+
 
 {% endblock %}
