@@ -22,24 +22,6 @@
     </table>
 </div>
 
-<!-- <tr id="{{ player.tag.lower().strip('#') }}">
-    <td class="text_center"> {{ loop.index }} </td>
-    <td class="center">
-        <img class="icon_bigger" src="{{ url_for('static', filename='img/icons/' + player.icon|string + '.png') }}" alt="profile icon">
-        <span> {{ player.name }} </span>
-    </td>
-    <td >
-        <div class="center">
-            <img class="icon_bigger" src="{{ url_for('static', filename='img/badges/' + player.club_badge + '.png') }}" alt="club badge">
-            <span> {{ player.club_name }} </span>
-        </div>
-    </td>
-    <td class="center">
-        <img class="icon_bigger" src="{{ url_for('static', filename='img/leagues/league_' + player.league_badge + '.png') }}" alt="league badge">
-        <span> {{ player.trophies }} </span>
-    </td>
-</tr> -->
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='script_lb.js') }}"></script>
 <script>
