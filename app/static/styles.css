@@ -224,10 +224,7 @@ table#members {
     overflow-x: hidden;
 }
 
-table#members td {
-    display: table-cell;
-    align-items: center;
-}
+
 
 table #position {
     width: 3vw;
