@@ -224,6 +224,10 @@ table#members {
     overflow-x: hidden;
 }
 
+table#members td {
+    display: table-cell;
+}
+
 table #position {
     width: 3vw;
 }
