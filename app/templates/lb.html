@@ -30,7 +30,7 @@
     const league_icon = "{{ url_for('static', filename='img/leagues/league_') }}";
 
     $( document ).ready(() => {
-        fetch({{ request_url }})
+        fetch("{{ request_url }}")
         .then(response => response.json())
         .then(players => {
             players.forEach((player, index) => {
