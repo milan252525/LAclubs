@@ -23,8 +23,7 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='script_lb.js') }}"></script>
-<script>
+<script nonce="{{ csp_nonce() }}">
     const limit = {{ limit }};
     const trophy_icon = {{ url_for('static', filename='img/icons/') }};
     const badge_icon = {{ url_for('static', filename='img/badges/') }};
@@ -80,6 +79,4 @@
         })
     });
 </script>
-
-
 {% endblock %}
