@@ -53,7 +53,7 @@ def club():
 def lb():
     region = request.args.get('region', default = None)
     country = request.args.get('country', default = None)
-    url = "/api/lb" + request.query_string
+    url = "/api/lb" + str(request.query_string)
 
     title = f"LA LEADERBOARD"
     if region is not None:
