@@ -55,7 +55,7 @@ def lb():
     region = request.args.get('region', default = None)
     country = request.args.get('country', default = None)
     
-    limit = request.args.get('limit', default = 100)
+    limit = request.args.get('limit', default = -1, type=int)
     url = f"/api/lb?limit={limit}"
 
     title = f"LA LEADERBOARD"
@@ -76,12 +76,13 @@ def api_lb():
     region = request.args.get('region', default = None)
     country = request.args.get('country', default = None)
 
-    limit = request.args.get('limit', default = 100, type=int)
-    if limit < 0:
-        limit = 100
+    limit = request.args.get('limit', default = -1, type=int)
 
     players = get_data.get_all_players(region=region, country=country)
-    return jsonify(players[:limit])
+    if limit < 0:
+        return jsonify(players)
+    else:
+        return jsonify(players[:limit])
 
 @app.route('/favicon.ico')
 def favicon():
