@@ -225,7 +225,9 @@ table#members {
 }
 
 table#members td {
-    display: table-cell;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 table #position {
