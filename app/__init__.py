@@ -29,7 +29,10 @@ csp = {
         "'self'",
         "www.google-analytics.com"
     ],
-    'connect-src' : "*.google-analytics.com"
+    'connect-src' : [
+        "*.google-analytics.com",
+        "'self'"
+    ]
 } 
 
 Talisman(app, content_security_policy=csp, content_security_policy_nonce_in=['script-src'])
