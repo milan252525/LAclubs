@@ -20,6 +20,7 @@
         <tbody>
         </tbody>
     </table>
+    <p class="category" id="loading">Loading...</p>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -27,6 +28,8 @@
     const trophy_icon = "{{ url_for('static', filename='img/icons/') }}";
     const badge_icon = "{{ url_for('static', filename='img/badges/') }}";
     const league_icon = "{{ url_for('static', filename='img/leagues/league_') }}";
+
+    let loading = $('#loading');
 
     $( document ).ready(() => {
         fetch("{{ request_url|safe }}")
@@ -77,6 +80,7 @@
                 $('#members').find('tbody').append(row);
             })
         })
+        .then(() => loading.hide())
     });
 </script>
 {% endblock %}
