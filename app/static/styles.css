@@ -261,6 +261,13 @@ table#members tr:nth-of-type(2n) {
     margin-left: 2vw;
 }
 
+p.loading {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 200%;
+    margin-top: 0;
+}
+
 
 @media (max-width: 1400px) {
     .club {

@@ -36,6 +36,9 @@
         .then(response => response.json())
         .then(players => {
             players.forEach((player, index) => {
+                if (index % 100 === 0) {
+                    loading.text("Loading... (" + index + "/" + players.length + ")")
+                }
                 let row =  $('<tr>');
                 row.attr('id', (player['tag'].toLowerCase()).replace('#', ''));
                 row.append( $('<td>')
