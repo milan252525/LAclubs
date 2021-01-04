@@ -75,8 +75,12 @@ def api_lb():
     region = request.args.get('region', default = None)
     country = request.args.get('country', default = None)
 
+    limit = request.args.get('limit', default = 100)
+    if limit < 0:
+        limit = 100
+
     players = get_data.get_all_players(region=region, country=country)
-    return jsonify(players)
+    return jsonify(players[:limit])
 
 
 @app.route('/favicon.ico')
