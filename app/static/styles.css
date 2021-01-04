@@ -264,7 +264,8 @@ table#members tr:nth-of-type(2n) {
 p.loading {
     margin-left: auto;
     margin-right: auto;
-    font-size: 200%;
+    width: auto;
+    font-size: 150%;
     margin-top: 0;
 }
 

@@ -41,6 +41,7 @@
         fetch("{{ request_url|safe }}")
         .then(response => response.json())
         .then(players => {
+            let rows = [];
             players.forEach((player, index) => {
                 let row =  $('<tr>');
                 row.attr('id', (player['tag'].toLowerCase()).replace('#', ''));
@@ -83,8 +84,9 @@
                         .text(player['trophies'])
                     )
                 );
-                $('#members').find('tbody').append(row);
+                rows.push(row);
             })
+            $('#members').find('tbody').append(rows);
         })
         .then(() => loading.hide())
     });
