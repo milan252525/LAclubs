@@ -56,6 +56,7 @@ def lb():
     country = request.args.get('country', default = None)
     
     limit = request.args.get('limit', default = 100)
+    url = f"/api/lb?limit={limit}"
 
     title = f"LA LEADERBOARD"
     if region is not None:
