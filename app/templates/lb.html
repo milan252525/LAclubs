@@ -21,7 +21,7 @@
         </tbody>
     </table>
     <p class="loading" id="loading">
-        {% if limit < 0 || limit > 5000  %}
+        {% if limit < 0 or limit > 5000  %}
         Loading data. This might take a while...
         {% else %}
         Loading data...
