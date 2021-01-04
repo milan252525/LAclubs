@@ -34,8 +34,8 @@
         .then(response => response.json())
         .then(players => {
             players.forEach((player, index) => {
-                let row =  $('<tr>')
-                    .attr('id', (player['tag'].toLowerCase()).replace('#', ''));
+                let row =  $('<tr>');
+                row.attr('id', (player['tag'].toLowerCase()).replace('#', ''));
                 row.append( $('<td>')
                     .attr('class', 'text_center')
                     .text(index+1)
@@ -51,7 +51,7 @@
                         .text(player['name'])
                     )
                 );
-                row.append( $('<td>')
+                /* row.append( $('<td>')
                     .attr('class', 'center')
                     .append( $('<img>')
                         .attr('class', 'icon_bigger')
@@ -72,7 +72,7 @@
                     .append( $('<span>')
                         .text(player['trophies'])
                     )
-                );
+                ); */
                 $('#members').find('tbody').append(row);
             })
         })
