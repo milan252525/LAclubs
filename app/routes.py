@@ -1,4 +1,4 @@
-from flask import render_template, request, send_from_directory, make_response, redirect, url_for, jsonify
+from flask import render_template, request, send_from_directory, make_response, redirect, url_for, jsonify, escape
 from app import app, discord
 from flask_discord import requires_authorization, Unauthorized
 from . import get_data
@@ -54,17 +54,18 @@ def club():
 def lb():
     region = request.args.get('region', default = None)
     country = request.args.get('country', default = None)
-    url = str(request.query_string)
-    regex = re.compile('[^a-zA-Z?&=1-9]')
-    url = "/api/lb" + regex.sub('', url)
+    
+    limit = request.args.get('limit', default = 100)
 
     title = f"LA LEADERBOARD"
     if region is not None:
+        region = escape(region)
+        url = f"/api/lb?region={region.lower()}&limit={limit}" 
         title = f"{region.upper()} LEADERBOARD"
     elif country is not None:
+        country = escape(country)
+        url = f"/api/lb?country={country.lower()}&limit={limit}" 
         title = f"{country.upper()} LEADERBOARD"
-
-    limit = int(request.args.get('limit', default = -1))
 
     resp = make_response(render_template('lb.html', title=title, request_url=url, limit=limit))
     return resp
