@@ -20,7 +20,13 @@
         <tbody>
         </tbody>
     </table>
-    <p class="category" id="loading">Loading...</p>
+    <p class="loading" id="loading">
+        {% if limit < 0 || limit > 5000  %}
+        Loading data. This might take a while...
+        {% else %}
+        Loading data...
+        {% endif %} 
+    </p>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -36,9 +42,6 @@
         .then(response => response.json())
         .then(players => {
             players.forEach((player, index) => {
-                if (index % 100 === 0) {
-                    loading.text("Loading... (" + index + "/" + players.length + ")")
-                }
                 let row =  $('<tr>');
                 row.attr('id', (player['tag'].toLowerCase()).replace('#', ''));
                 row.append( $('<td>')
