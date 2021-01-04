@@ -54,9 +54,9 @@ def club():
 def lb():
     region = request.args.get('region', default = None)
     country = request.args.get('country', default = None)
-    url = "/api/lb" + str(request.query_string)
+    url = str(request.query_string)
     regex = re.compile('[^a-zA-Z?&=1-9]')
-    url = regex.sub('', url)
+    url = "/api/lb" + regex.sub('', url)
 
     title = f"LA LEADERBOARD"
     if region is not None:
