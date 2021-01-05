@@ -23,7 +23,7 @@
                     <p>HOME</p>  
                 </div>
             </a> -->
-            {% if type == 'low' %}
+            {% if type.lower() == 'low' %}
             <a href="clubs?type=low&members=92" class="link">
                 <div class="button_lb">
                     <img class="icon" src="{{ url_for('static', filename='img/members.png') }}" alt="members"> <p>&lt92</p>  
