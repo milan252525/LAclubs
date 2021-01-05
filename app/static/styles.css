@@ -267,6 +267,12 @@ p.loading {
     margin-top: 0;
 }
 
+p.nothing {
+    margin-left: 3vw;
+    font-size: 150%;
+    margin-top: 3vh;
+}
+
 
 @media (max-width: 1400px) {
     .club {
