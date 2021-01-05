@@ -19,7 +19,7 @@ def clubs():
     members = request.args.get('members', default = 95, type=int)
 
     lb_link = ""
-    low = type.lower() == "low"
+    low = type is not None and type.lower() == "low"
 
     if type is None and country is None and region is None:
         type = "all"
