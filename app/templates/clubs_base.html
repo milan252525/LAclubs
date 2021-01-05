@@ -54,7 +54,7 @@
             {% endif %}
         </div>
 
-        {% if low and not clubs %}
+        {% if low and clubs is not defined %}
         <p class="loading">
         No low clubs!
         </p>
