@@ -73,6 +73,8 @@ def lb():
         url = f"/api/lb?country={country.lower()}&limit={limit}" 
         title = f"{country.upper()} LEADERBOARD"
 
+    title = title.replace('EL', 'EL ').replace('REPUBLIC', ' REPUBLIC')
+
     resp = make_response(render_template('lb.html', title=title, request_url=url, limit=limit))
     return resp
 
