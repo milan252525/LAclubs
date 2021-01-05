@@ -51,13 +51,14 @@
                     <img class="icon" src="{{ url_for('static', filename='img/trophy.png') }}" alt="club trophies icon"> <p>TROPHY LEADERBOARD</p>  
                 </div>
             </a>
-            {% if len(clubs) == 0 %}
-            <p class="loading">
-            No low clubs!
-            </p>
-            {% endif %}
             {% endif %}
         </div>
+
+        {% if low and not clubs %}
+        <p class="loading">
+        No low clubs!
+        </p>
+        {% endif %}
 
         <div class="club_area">
             {% block content %} {% endblock %}
