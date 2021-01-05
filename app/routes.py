@@ -19,6 +19,7 @@ def clubs():
     members = request.args.get('members', default = 95)
 
     lb_link = ""
+    low = type.lower() == "low"
 
     if type is None and country is None and region is None:
         type = "all"
@@ -36,7 +37,7 @@ def clubs():
 
     clubs = get_data.get_clubs(region=region, country=country, type=type, members=members)
     
-    resp = make_response(render_template('clubs.html', clubs=clubs, title=title, lb_link=lb_link))
+    resp = make_response(render_template('clubs.html', clubs=clubs, title=title, lb_link=lb_link, low=low))
     return resp
 
 @app.route('/club')
