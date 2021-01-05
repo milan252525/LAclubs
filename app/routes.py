@@ -23,6 +23,8 @@ def clubs():
 
     if type is None and country is None and region is None:
         type = "all"
+        
+    if type == "all":
         lb_link = "lb?limit=500"
 
     if type is not None:
