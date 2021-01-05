@@ -16,7 +16,7 @@ def clubs():
     region = request.args.get('region', default = None)
     country = request.args.get('country', default = None)
     type = request.args.get('type', default = None)
-    members = request.args.get('members', default = 95)
+    members = request.args.get('members', default = 95, type=int)
 
     lb_link = ""
     low = type.lower() == "low"
