@@ -16,6 +16,7 @@ def clubs():
     region = request.args.get('region', default = None)
     country = request.args.get('country', default = None)
     type = request.args.get('type', default = None)
+    members = request.args.get('members', default = 95)
 
     lb_link = ""
 
@@ -33,7 +34,7 @@ def clubs():
         
     title = title.replace('EL', 'EL ').replace('REPUBLIC', ' REPUBLIC')
 
-    clubs = get_data.get_clubs(region=region, country=country, type=type)
+    clubs = get_data.get_clubs(region=region, country=country, type=type, members=members)
     
     resp = make_response(render_template('clubs.html', clubs=clubs, title=title, lb_link=lb_link))
     return resp

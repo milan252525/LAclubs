@@ -23,6 +23,23 @@
                     <p>HOME</p>  
                 </div>
             </a> -->
+            {% if type == 'low' %}
+            <a href="clubs?type=low&members=92" class="link">
+                <div class="button_lb">
+                    <img class="icon" src="{{ url_for('static', filename='img/members.png') }}" alt="members"> <p>&lt92</p>  
+                </div>
+            </a>
+            <a href="clubs?type=low&members=95" class="link">
+                <div class="button_lb">
+                    <img class="icon" src="{{ url_for('static', filename='img/members.png') }}" alt="members"> <p>&lt95</p>  
+                </div>
+            </a>
+            <a href="clubs?type=low&members=98" class="link">
+                <div class="button_lb">
+                    <img class="icon" src="{{ url_for('static', filename='img/members.png') }}" alt="members"> <p>&lt98</p>  
+                </div>
+            </a>
+            {% endif %}
             {% if lb_link != "" %}
             <a href="lb?{{ lb_link }}&limit=200" class="link">
                 <div class="button_lb">

@@ -30,11 +30,11 @@ def get_rank_id(trophies):
     else:
         return 11
 
-def get_clubs(region, country, type):
+def get_clubs(region, country, type, members):
     if type == "all":
         filter = {}
     elif type == "low":
-        filter = {"member_count" : { "$lt": 95 }}
+        filter = {"member_count" : { "$lt": members }}
     elif region is not None:
         regex = re.compile('[^a-zA-Z]')
         region_safe = regex.sub('', region)
