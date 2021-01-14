@@ -29,6 +29,9 @@ def get_pres_vp_sen(members):
 
 clubs = db['tracked_clubs'].find()
 
+time_data = time.gmtime(int(time.time()))
+save_history = time_data.tm_hour % 4 == 0 and time_data.tm_min < 5
+
 for club in clubs:
     tag = club['tag']
     print(f"Updating {club['name']}")
@@ -58,6 +61,14 @@ for club in clubs:
             'vp_count': vp_count,
             'sen_count': sen_count
         }
+        history = {
+            'time' : int(time.time()),
+            'name': data['name'],
+            'tag': tag,
+            'description': data['description'],
+            'trophies': data['trophies'],
+            'members': data['members']
+        }
     except KeyError:
         print(f"{club['name']} {tag} KEY ERROR")
         continue
@@ -68,4 +79,7 @@ for club in clubs:
         upsert=True
     )
 
-    time.sleep(0.3)
+    if save_history:
+        db['club_history'].insert_one(history)
+
+    time.sleep(0.1)
