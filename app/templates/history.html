@@ -44,7 +44,6 @@
                         y: history['trophies'][index]
                     })
                 });
-                console.log(history_data);
                 let ctx = $('#trophy_chart');
                 let chart = new Chart(ctx, {
                     type: 'line',
@@ -75,7 +74,7 @@
                         },
                         elements: {
                             line: {
-                                lineTension: 0
+                                tension: 0
                             }
                         }
                     }
