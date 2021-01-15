@@ -17,11 +17,13 @@
             <h1>{{ title }}</h1>
         </div>
         {% if history_link != "" %}
-        <a href="{{ history_link }}" class="link">
-            <div class="button_lb">
-                <img class="icon" src="{{ url_for('static', filename='img/chart.png') }}" alt="chart icon"> <p>TROPHY HISTORY</p>  
-            </div>
-        </a>
+        <div class="button_row">
+            <a href="{{ history_link }}" class="link">
+                <div class="button_lb">
+                    <img class="icon" src="{{ url_for('static', filename='img/chart.png') }}" alt="chart icon"> <p>TROPHY HISTORY</p>  
+                </div>
+            </a>
+        </div>
         {% endif %}
 
         {% if club.success %}   

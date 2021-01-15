@@ -52,7 +52,7 @@ def club():
         history_link = ""
     else:
         title=club['name']
-        history_link = "history/club/?tag=" + tag.strip("#").upper()
+        history_link = "history/club?tag=" + tag.strip("#").upper()
     resp = make_response(render_template('club_single.html', club=club, title=title, history_link=history_link))
     return resp
 
