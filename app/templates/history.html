@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGCX42N87F"></script>
+        <script src="{{url_for('static', filename='analytics.js')}}" type="text/javascript"></script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trophy History</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body>
+        
+        <div id="smaller_site_top">
+            <a href="/index"><img src="{{ url_for('static', filename='img/la_logo.png') }}" alt="LA logo"></a>
+            <h1 id="title">Trophy History</h1>
+        </div>
+
+        <div id="chart_container">
+            <canvas id="trophy_chart"></canvas>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js" integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA==" crossorigin="anonymous"></script>
+        <script nonce="{{ csp_nonce() }}">
+            Chart.platform.disableCSSInjection = true;
+            $( document ).ready(() => {
+                fetch("{{ request_url|safe }}")
+                .then(response => response.json())
+                .then(result => draw_graph(result))
+            });
+
+            function draw_graph(history) {
+
+            }
+        </script>
+    </body>
+</html>

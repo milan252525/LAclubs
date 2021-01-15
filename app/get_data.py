@@ -119,20 +119,26 @@ def get_player_history(tag):
         return {"status" : "not_found"}
     times = []
     trophies = []
+    name = None
     for entry in history:
+        if name is None:
+            name = entry["members"][0]["name"]
         times.append(entry["time"])
         trophies.append(entry["members"][0]["trophies"])
-    return {"trophies" : trophies, "times" : times, "status" : "ok"}
+    return {"trophies" : trophies, "times" : times, "status" : "ok", "name" : name}
 
 def get_club_history(tag):
     filter = {"tag": tag}
-    limit_field = {"trophies":1, "time":1}
+    limit_field = {"trophies":1, "time":1, "name":1}
     history = mongo.db.club_history.find(filter, limit_field).sort("time", 1)
     if history.count() == 0:
         return {"status" : "not_found"}
     times = []
     trophies = []
+    name = None
     for entry in history:
+        if name is None:
+            name = ["name"]
         times.append(entry["time"])
         trophies.append(entry["trophies"])
-    return {"trophies" : trophies, "times" : times, "status" : "ok"}
+    return {"trophies" : trophies, "times" : times, "status" : "ok", "name" : name}

@@ -78,6 +78,13 @@ def lb():
     resp = make_response(render_template('lb.html', title=title, request_url=url, limit=limit))
     return resp
 
+@app.route('/history/club')
+def history_club():
+    tag = request.args.get('tag', default = "")
+    url = f"/api/history/club?tag={tag}"
+    resp = make_response(render_template("history.html", request_url=url))
+    return resp
+
 @app.route('/api/lb')
 def api_lb():
     region = request.args.get('region', default = None)
@@ -94,6 +101,8 @@ def api_lb():
 @app.route('/api/history/player')
 def api_history_player():
     tag = request.args.get('tag', default = None)
+    if tag is None:
+        return {"status" : "missing_tag"}
     tag = "#" + tag.upper().replace("O", "0")
     allowed = '#0289PYLQGRJCUV'
     for c in tag:
@@ -104,9 +113,11 @@ def api_history_player():
 @app.route('/api/history/club')
 def api_history_club():
     tag = request.args.get('tag', default = None)
+    if tag is None:
+        return {"status" : "missing_tag"}
     tag = tag.upper().replace("O", "0")
-    tag = "#" + tag.upper()
-    allowed = '#0289PYLQGRJCUV'
+    tag = tag.upper()
+    allowed = '0289PYLQGRJCUV'
     for c in tag:
         if c not in allowed:
             return {"status" : "invalid"}

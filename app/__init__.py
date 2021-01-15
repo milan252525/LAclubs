@@ -23,7 +23,8 @@ csp = {
         "*.googleanalytics.com",
         "*.google-analytics.com",
         "www.googletagmanager.com",
-        "*.googleapis.com"
+        "cdnjs.cloudflare.com",
+
     ],
     'img-src' : [
         "'self'",
