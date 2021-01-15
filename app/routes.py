@@ -91,6 +91,20 @@ def api_lb():
     else:
         return jsonify(players[:limit])
 
+@app.route('/api/history/player')
+def api_history_player():
+    tag = request.args.get('tag', default = None)
+    tag = tag.strip("#").upper()
+    
+    return  jsonify(get_data.get_player_history(tag))
+
+@app.route('/api/history/club')
+def api_history_club():
+    tag = request.args.get('tag', default = None)
+    tag = tag.strip("#").upper()
+    
+    return  jsonify(get_data.get_club_history(tag))
+    
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
