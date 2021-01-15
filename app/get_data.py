@@ -113,22 +113,26 @@ def get_all_players(region, country):
 
 def get_player_history(tag):
     filter = {"members.tag": tag}
-    limit_field = {"members.$":1,"time":1}
+    limit_field = {"members.$":1, "time":1}
     history = mongo.db.club_history.find(filter, limit_field).sort("time", 1)
+    if history.count() == 0:
+        return {"status" : "not_found"}
     times = []
     trophies = []
     for entry in history:
         times.append(entry["time"])
         trophies.append(entry["members"][0]["trophies"])
-    return {"trophies" : trophies, "times" : times}
+    return {"trophies" : trophies, "times" : times, "status" : "ok"}
 
 def get_club_history(tag):
     filter = {"tag": tag}
-    limit_field = {"trophies":1,"time":1}
+    limit_field = {"trophies":1, "time":1}
     history = mongo.db.club_history.find(filter, limit_field).sort("time", 1)
+    if history.count() == 0:
+        return {"status" : "not_found"}
     times = []
     trophies = []
     for entry in history:
         times.append(entry["time"])
         trophies.append(entry["trophies"])
-    return {"trophies" : trophies, "times" : times}
+    return {"trophies" : trophies, "times" : times, "status" : "ok"}
