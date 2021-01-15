@@ -33,15 +33,15 @@
             });
 
             function draw_graph(history) {
-                if (result['status'] !== "ok") {
+                if (history['status'] !== "ok") {
                     window.alert(result['status']);
                     return;
                 }
                 let data = [];
-                result['times'].forEach((time, index) => {
+                history['times'].forEach((time, index) => {
                     data.push({
                         x: new Date(time*1000),
-                        y: result['trophies'][index]
+                        y: history['trophies'][index]
                     })
                 });
 
