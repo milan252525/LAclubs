@@ -37,18 +37,24 @@
                     window.alert(result['status']);
                     return;
                 }
-                let data = [];
+                let history_data = [];
                 history['times'].forEach((time, index) => {
-                    data.push({
+                    history_data.push({
                         x: new Date(time*1000),
                         y: history['trophies'][index]
                     })
                 });
-                console.log(data);
+                console.log(history_data);
                 let ctx = $('#trophy_chart');
                 let chart = new Chart(ctx, {
                     type: 'line',
-                    data: data
+                    data: {
+                        datasets: [{
+                            data : history_data,
+                            label: "trophies",
+                            fill: true
+                        }]
+                    }
                 });
             }
         </script>
