@@ -37,6 +37,7 @@
                     window.alert(result['status']);
                     return;
                 }
+                $("#title").text(history["name"]);
                 let history_data = [];
                 history['times'].forEach((time, index) => {
                     history_data.push({
@@ -74,7 +75,7 @@
                         },
                         elements: {
                             line: {
-                                tension: 0.3
+                                tension: 0.2
                             }
                         }
                     }
