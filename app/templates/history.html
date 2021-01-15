@@ -33,7 +33,23 @@
             });
 
             function draw_graph(history) {
+                if (result['status'] !== "ok") {
+                    window.alert(result['status']);
+                    return;
+                }
+                let data = [];
+                result['times'].forEach((time, index) => {
+                    data.push({
+                        x: new Date(time*1000),
+                        y: result['trophies'][index]
+                    })
+                });
 
+                let ctx = $('#trophy_chart');
+                let chart = new Char(ctx, {
+                    type: 'line',
+                    data: data
+                });
             }
         </script>
     </body>

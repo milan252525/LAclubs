@@ -138,7 +138,7 @@ def get_club_history(tag):
     name = None
     for entry in history:
         if name is None:
-            name = ["name"]
+            name = entry["name"]
         times.append(entry["time"])
         trophies.append(entry["trophies"])
     return {"trophies" : trophies, "times" : times, "status" : "ok", "name" : name}
