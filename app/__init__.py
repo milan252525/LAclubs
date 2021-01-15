@@ -17,7 +17,10 @@ discord = DiscordOAuth2Session(app)
 mongo = PyMongo(app)
 
 csp = {
-    "default-src" : "'self'",
+    "default-src" : [
+        "'self'",
+        "cdnjs.cloudflare.com"
+    ],
     'script-src': [ 
         "'self'",
         "*.googleanalytics.com",
