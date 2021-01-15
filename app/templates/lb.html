@@ -29,7 +29,7 @@
     </p>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" nonce="{{ csp_nonce() }}"></script>
 <script nonce="{{ csp_nonce() }}">
     const trophy_icon = "{{ url_for('static', filename='img/icons/') }}";
     const badge_icon = "{{ url_for('static', filename='img/badges/') }}";

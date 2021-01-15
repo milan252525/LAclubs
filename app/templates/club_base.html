@@ -16,10 +16,18 @@
             <a href="/index"><img src="{{ url_for('static', filename='img/badges/' + club.badge + '.png') }}" alt="club badge"></a>
             <h1>{{ title }}</h1>
         </div>
-            {% if club.success %}   
-                {% block content %} {% endblock %}
-            {% else %}
-                <p class="error"> This website displays only LA clubs. </p>
-            {% endif %}
+        {% if history_link != "" %}
+        <a href="{{ history_link }}" class="link">
+            <div class="button_lb">
+                <img class="icon" src="{{ url_for('static', filename='img/chart.png') }}" alt="chart icon"> <p>TROPHY HISTORY</p>  
+            </div>
+        </a>
+        {% endif %}
+
+        {% if club.success %}   
+        {% block content %} {% endblock %}
+        {% else %}
+        <p class="error"> This website displays only LA clubs. </p>
+        {% endif %}
     </body>
 </html>
