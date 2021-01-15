@@ -40,7 +40,7 @@
                 let history_data = [];
                 history['times'].forEach((time, index) => {
                     history_data.push({
-                        x: new Date(time*1000),
+                        t: new Date(time*1000),
                         y: history['trophies'][index]
                     })
                 });
@@ -54,6 +54,16 @@
                             label: "trophies",
                             fill: true
                         }]
+                    },
+                    options: {
+                        scales: {
+                            xAxes: [{
+                                type: 'time',
+                                time: {
+                                    unit: 'day'
+                                }
+                            }]
+                        }
                     }
                 });
             }
