@@ -61,8 +61,22 @@
                                 type: 'time',
                                 time: {
                                     unit: 'day'
-                                }
+                                },
+                                distribution: 'linear'
                             }]
+                        },
+                        responsive: true,
+                        legend: {
+                            display: false
+                        },
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        elements: {
+                            line: {
+                                lineTension: 0
+                            }
                         }
                     }
                 });
