@@ -142,3 +142,19 @@ def get_club_history(tag):
         times.append(entry["time"])
         trophies.append(entry["trophies"])
     return {"trophies" : trophies, "times" : times, "status" : "ok", "name" : name}
+
+def get_club_name(tag):
+    regex = re.compile('[^0289PYLQGRJCUV]')
+    tag_safe = regex.sub('', tag)
+    club = mongo.db.clubs.find_one({"tag": tag_safe}, {"name": 1})
+    if club is None:
+        return ""
+    return club["name"]
+
+def get_player_name(tag):
+    regex = re.compile('[^0289PYLQGRJCUV]')
+    tag_safe = regex.sub('', tag)
+    player = mongo.db.club_history.find_one({"members.tag": tag_safe}, {"members.$":1})
+    if player is None:
+        return ""
+    return player["members"][0]["name"]

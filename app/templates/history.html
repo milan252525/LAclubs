@@ -15,7 +15,7 @@
         
         <div id="smaller_site_top">
             <a href="/index"><img src="{{ url_for('static', filename='img/la_logo.png') }}" alt="LA logo"></a>
-            <h1 id="title">Trophy History</h1>
+            <h1 id="title">{{ name }} HISTORY</h1>
         </div>
 
         <div id="chart_container">
@@ -37,7 +37,6 @@
                     window.alert(result['status']);
                     return;
                 }
-                $("#title").text(history["name"]);
                 let history_data = [];
                 history['times'].forEach((time, index) => {
                     history_data.push({

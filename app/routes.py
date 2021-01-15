@@ -82,7 +82,8 @@ def lb():
 def history_club():
     tag = request.args.get('tag', default = "")
     url = f"/api/history/club?tag={tag}"
-    resp = make_response(render_template("history.html", request_url=url))
+    name = get_data.get_club_name(tag)
+    resp = make_response(render_template("history.html", request_url=url, name=name if name != "" else "NOT FOUND"))
     return resp
 
 @app.route('/api/lb')
