@@ -51,7 +51,9 @@
                         datasets: [{
                             data : history_data,
                             label: "trophies",
-                            fill: true
+                            fill: true,
+                            cubicInterpolationMode: 'monotone',
+                            borderColor: 'rgba(0, 0, 0, 0.1)'
                         }]
                     },
                     options: {
@@ -71,11 +73,6 @@
                         tooltips: {
                             mode: 'index',
                             intersect: false
-                        },
-                        elements: {
-                            line: {
-                                tension: 0.2
-                            }
                         }
                     }
                 });

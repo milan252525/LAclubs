@@ -67,7 +67,8 @@ for club in clubs:
             'tag': tag,
             'description': data['description'],
             'trophies': data['trophies'],
-            'members': data['members']
+            'members': data['members'],
+            'member_count' : len(data['members'])
         }
     except KeyError:
         print(f"{club['name']} {tag} KEY ERROR")
