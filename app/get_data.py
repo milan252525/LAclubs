@@ -168,7 +168,7 @@ def get_club_log(tag):
         previous = history[i+1]
 
         current_time = datetime.datetime.fromtimestamp(current["time"])
-        ago = timeago.format(current_time, datetime.datetime.now())
+        ago = timeago.format(current_time, datetime.datetime.now(), "en_short")
 
         if current["description"] != current["description"]:
             result.append({"type": "desc", "new": current["description"], "time": ago})
