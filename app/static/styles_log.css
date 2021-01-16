@@ -18,14 +18,12 @@
 }
 
 .log_entry .time {
-    position: relative;
-    font-size: smaller;
+    background-color: whitesmoke;
+    margin: 0;
 }
 
 .log_entry .data {
-    position: relative;
-    font-size: medium;
-    top: 1vh;
+    
 }
 
 #join {
