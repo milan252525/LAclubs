@@ -286,11 +286,11 @@ p.nothing {
 @media (max-width: 1200px) {
     .club {
         width: 95vw;
-        font-size: 85%;
+        /* font-size: 85%; */
     }
 
     body {
-        /* font-size: 90%; */
+        font-size: 95%;
     }
 
     #smaller_site_top h1 {
