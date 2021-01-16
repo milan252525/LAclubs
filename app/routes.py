@@ -124,6 +124,19 @@ def api_history_club():
         if c not in allowed:
             return {"status" : "invalid"}
     return jsonify(get_data.get_club_history(tag))
+
+@app.route('/api/history/log')
+def api_history_log():
+    tag = request.args.get('tag', default = None)
+    if tag is None:
+        return {"status" : "missing_tag"}
+    tag = tag.upper().replace("O", "0")
+    tag = tag.upper()
+    allowed = '0289PYLQGRJCUV'
+    for c in tag:
+        if c not in allowed:
+            return {"status" : "invalid"}
+    return jsonify(get_data.get_club_log(tag))
     
 @app.route('/favicon.ico')
 def favicon():

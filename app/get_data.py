@@ -1,6 +1,8 @@
 import json
 import os
 from time import time
+import datetime
+import timeago
 from app import mongo
 import re
 
@@ -142,6 +144,62 @@ def get_club_history(tag):
         times.append(entry["time"])
         trophies.append(entry["trophies"])
     return {"trophies" : trophies, "times" : times, "status" : "ok", "name" : name}
+
+def get_role_priority(role):
+    if role == "member":
+        return 1
+    elif role == "senior":
+        return 2
+    elif role == "vicePresident":
+        return 3
+    elif role == "president":
+        return 4
+        
+
+def get_club_log(tag):
+    filter = {"tag": tag}
+    history = mongo.db.club_history.find(filter).sort("time", -1)
+    if history.count() == 0:
+        return {"status" : "not_found"}
+    history = list(history)
+    result = []
+    for i in range(len(history)-1):
+        current = history[i]
+        previous = history[i+1]
+
+        current_time = datetime.datetime.fromtimestamp(current["time"])
+        ago = timeago.format(current_time, datetime.datetime.now())
+
+        if current["description"] != current["description"]:
+            result.append({"type": "desc", "new": current["description"], "time": ago})
+
+        for member in current["members"]:
+            tag = member["tag"]
+            past = None
+            for membernew in previous["members"]:
+                if tag == membernew["tag"]:
+                    past = membernew
+                    break
+            if past is None:
+                result.append({"type": "join", "name": member["name"], "time": ago})
+            else:
+                if get_role_priority(past["role"]) > get_role_priority(member["role"]):
+                    result.append({"type": "demote", "name": member["name"], "time": ago, "role": member["role"]})
+                elif get_role_priority(past["role"]) > get_role_priority(member["role"]):
+                    result.append({"type": "promote", "name": member["name"], "time": ago, "role": member["role"]})
+                if past["name"] != member["name"]:
+                    result.append({"type": "name", "time": ago, "old" : past["name"], "new": member["name"]})
+        
+        for member in previous["members"]:
+            tag = member["tag"]
+            future = None
+            for memberold in current["members"]:
+                if tag == memberold["tag"]:
+                    future = memberold
+                    break
+            if future is None:
+                result.append({"type": "leave", "name": member["name"], "time": ago})
+    return result
 
 def get_club_name(tag):
     regex = re.compile('[^0289PYLQGRJCUV]')
