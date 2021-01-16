@@ -12,7 +12,7 @@
 .log_entry {
     width: 90vw;
     margin-bottom: 5px;
-    height: 5vh;
+    height: 7vh;
     
     display: inline-flex;
     flex-direction: row;
