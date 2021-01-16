@@ -6,19 +6,18 @@
     margin-top: 2vh;
     margin-bottom: 2vh;
     width: 95vw;
-
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
 }
 
 .log_entry {
     width: 90vw;
     margin-bottom: 5px;
     height: 5vh;
+    
     display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .log_entry .time {
