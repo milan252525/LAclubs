@@ -65,6 +65,38 @@
                             )
                         );
                     }
+                    else if (entry.type === "promote") {
+                        log_area.append( 
+                            $( "<div>" )
+                            .addClass("log_entry")
+                            .attr("id", "promote")
+                            .append(
+                                $( "<div>" )
+                                .addClass("time")
+                                .text(entry.time)
+                            ).append(
+                                $( "<div>" )
+                                .addClass("data")
+                                .text(entry.name + " was promoted from " + entry.old + " to " + entry.new)
+                            )
+                        );
+                    }
+                    else if (entry.type === "demote") {
+                        log_area.append( 
+                            $( "<div>" )
+                            .addClass("log_entry")
+                            .attr("id", "promote")
+                            .append(
+                                $( "<div>" )
+                                .addClass("time")
+                                .text(entry.time)
+                            ).append(
+                                $( "<div>" )
+                                .addClass("data")
+                                .text(entry.name + " was demoted from " + entry.old + " to " + entry.new)
+                            )
+                        );
+                    }
                 });
             }
         </script>

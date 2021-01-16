@@ -6,7 +6,6 @@
     margin-top: 2vh;
     margin-bottom: 2vh;
     width: 95vw;
-    font-size: 80%;
 }
 
 .log_entry {
@@ -46,12 +45,26 @@
 }
 
 #leave .data{
-    background-color: rgb(236, 45, 54);
+    background-color: rgb(235, 75, 83);
     border: 1px solid red;
+}
+
+#promote .data {
+    background-color: lightseagreen;
+    border: 1px solid seagreen;
+}
+
+#demote .data {
+    background-color: rgb(201, 57, 100);
+    border: 1px solid rgb(212, 30, 76);
 }
 
 @media (max-width: 800px) {
     .log_entry .time {
         width: 20vw;
+    }
+
+    #log_area {
+        font-size: 80%;
     }
 }
