@@ -48,7 +48,7 @@
 }
 
 #join .data {
-    background-color: lightgreen;
+    background-color: rgb(104, 240, 104);
     border: 1px solid green;
 }
 
@@ -63,7 +63,7 @@
 }
 
 #demote .data {
-    background-color: purple;
+    background-color: rgb(230, 41, 230);
     border: 1px solid red;
 }
 
