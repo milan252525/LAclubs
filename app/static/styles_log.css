@@ -53,23 +53,24 @@
 }
 
 #leave .data{
-    background-color: rgb(235, 75, 83);
-    border: 1px solid red;
-}
-
-#promote .data {
-    background-color: lightseagreen;
-    border: 1px solid seagreen;
-}
-
-#demote .data {
     background-color: lightpink;
     border: 1px solid purple;
 }
 
+#promote .data {
+    background-color: limegreen;
+    border: 1px solid lime;
+}
+
+#demote .data {
+    
+    background-color: rgb(235, 75, 83);
+    border: 1px solid red;
+}
+
 #name .data {
     background-color: lightskyblue;
-    border: 1px solid skyblue;
+    border: 1px solid blue;
 }
 
 @media (max-width: 800px) {
