@@ -13,12 +13,6 @@
     width: 90vw;
     margin-bottom: 5px;
     height: 7vh;
-    
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
 }
 
 .log_entry .time {
@@ -32,12 +26,24 @@
     border: 1px solid black;
     border-right: none;
     text-align: center;
+
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .log_entry .data {
     height: 100%;
     width: 80vw;
     padding-left: 1vw;
+
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 #join .data {
