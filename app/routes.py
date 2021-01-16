@@ -50,10 +50,12 @@ def club():
     if not club['success']:
         title='ERROR'
         history_link = ""
+        log_link = ""
     else:
         title=club['name'].upper()
         history_link = "history/club?tag=" + tag.strip("#").upper()
-    resp = make_response(render_template('club_single.html', club=club, title=title, history_link=history_link))
+        log_link = "history/log?tag=" + tag.strip("#").upper()
+    resp = make_response(render_template('club_single.html', club=club, title=title, history_link=history_link, log_link=log_link))
     return resp
 
 @app.route('/lb')

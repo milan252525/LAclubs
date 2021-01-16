@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGCX42N87F"></script>
+        <script src="{{url_for('static', filename='analytics.js')}}" type="text/javascript"></script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ name }} LOG</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body>
+        <div id="smaller_site_top">
+            <a href="/index"><img src="{{ url_for('static', filename='img/la_logo.png') }}" alt="LA logo"></a>
+            <h1 id="title">{{ name }} LOG</h1>
+        </div>
+
+        <h1>COMING SOON</h1>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" nonce="{{ csp_nonce() }}"></script>
+        <script nonce="{{ csp_nonce() }}">
+            console.log("coming soon");
+        </script>
+    </body>
+</html>
