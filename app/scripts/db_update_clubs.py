@@ -68,7 +68,10 @@ for club in clubs:
             'description': data['description'],
             'trophies': data['trophies'],
             'members': data['members'],
-            'member_count' : len(data['members'])
+            'member_count' : len(data['members']),
+            'required': data['requiredTrophies'],
+            'badge': data['badgeId'],
+            'type': data['type'].lower()
         }
     except KeyError:
         print(f"{club['name']} {tag} KEY ERROR")
