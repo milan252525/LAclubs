@@ -89,7 +89,7 @@ def history_club():
     resp = make_response(render_template("history.html", request_url=url, name=name.upper() if name != "" else "NOT FOUND"))
     return resp
 
-@app.route('/history/log')
+@app.route('/history/log')#change
 def history_log():
     tag = request.args.get('tag', default = "")
     url = f"/api/history/log?tag={tag}"
