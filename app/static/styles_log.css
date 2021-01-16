@@ -6,6 +6,7 @@
     margin-top: 2vh;
     margin-bottom: 2vh;
     width: 95vw;
+    font-size: 90%;
 }
 
 .log_entry {
@@ -17,7 +18,6 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    align-items: center;
 }
 
 .log_entry .time {
