@@ -17,8 +17,8 @@
             <h1 id="title">{{ name }} LOG</h1>
         </div>
 
-        <p class="category">Club:</p>
-        <div id="log_area_club"></div>
+        <!-- <p class="category">Club:</p>
+        <div id="log_area_club"></div> -->
         <p class="category">Members:</p>
         <div id="log_area"></div>
 
@@ -107,6 +107,26 @@
                                 .addClass("data")
                                 .append(
                                     $( "<p>" ).text(entry.name + " was demoted from " + entry.old + " to " + entry.new)
+                                )
+                            )
+                        );
+                    }
+                    else if (entry.type === "name") {
+                        log_area.append( 
+                            $( "<div>" )
+                            .addClass("log_entry")
+                            .attr("id", "name")
+                            .append(
+                                $( "<div>" )
+                                .addClass("time")
+                                .append(
+                                    $( "<p>" ).text(entry.time)
+                                )
+                            ).append(
+                                $( "<div>" )
+                                .addClass("data")
+                                .append(
+                                    $( "<p>" ).text(entry.old + " changed name to " + entry.new)
                                 )
                             )
                         );

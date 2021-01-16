@@ -63,8 +63,13 @@
 }
 
 #demote .data {
-    background-color: rgb(201, 57, 100);
-    border: 1px solid rgb(212, 30, 76);
+    background-color: lightpink;
+    border: 1px solid purple;
+}
+
+#name .data {
+    background-color: lightskyblue;
+    border: 1px solid skyblue;
 }
 
 @media (max-width: 800px) {
