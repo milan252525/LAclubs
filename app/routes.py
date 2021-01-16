@@ -84,17 +84,17 @@ def lb():
 @app.route('/history/club')
 def history_club():
     tag = request.args.get('tag', default = "")
-    url = f"/api/history/log?tag={tag}"
+    url = f"/api/history/club?tag={tag}"
     name = get_data.get_club_name(tag)
-    resp = make_response(render_template("club_log.html", request_url=url, name=name.upper() if name != "" else "NOT FOUND"))
+    resp = make_response(render_template("history.html", request_url=url, name=name.upper() if name != "" else "NOT FOUND"))
     return resp
 
 @app.route('/history/log')
 def history_log():
     tag = request.args.get('tag', default = "")
-    url = f"/api/history/club?tag={tag}"
+    url = f"/api/history/log?tag={tag}"
     name = get_data.get_club_name(tag)
-    resp = make_response(render_template("history.html", request_url=url, name=name.upper() if name != "" else "NOT FOUND"))
+    resp = make_response(render_template("club_log.html", request_url=url, name=name.upper() if name != "" else "NOT FOUND"))
     return resp
 
 @app.route('/api/lb')
