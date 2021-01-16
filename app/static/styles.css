@@ -286,6 +286,7 @@ p.nothing {
 @media (max-width: 1200px) {
     .club {
         width: 95vw;
+        font-size: 80%;
     }
 
     body {
