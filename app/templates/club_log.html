@@ -41,11 +41,15 @@
                             .append(
                                 $( "<div>" )
                                 .addClass("time")
-                                .text(entry.time)
+                                .append(
+                                    $( "<p>" ).text(entry.time)
+                                )
                             ).append(
                                 $( "<div>" )
                                 .addClass("data")
-                                .text(entry.name + " joined")
+                                .append(
+                                    $( "<p>" ).text(entry.name + " joined")
+                                )
                             )
                         );
                     }
