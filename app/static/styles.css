@@ -289,7 +289,7 @@ p.nothing {
     }
 
     body {
-        font-size: 80%;
+        font-size: 85%;
     }
 
     #smaller_site_top h1 {
@@ -313,7 +313,7 @@ p.nothing {
     }
 
     table#members {
-        font-size: 70%;
+        font-size: 80%;
         width: 100%;
     }
 }
