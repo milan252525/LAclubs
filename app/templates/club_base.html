@@ -17,18 +17,22 @@
             <h1>{{ title }}</h1>
         </div>
         
-        {% if history_link != "" && log_link != "" %}
+        {% if history_link != "" or log_link != "" %}
         <div class="button_row">
+            {% if history_link != ""%}
             <a href="{{ history_link }}" class="link">
                 <div class="button_lb">
                     <img class="icon" src="{{ url_for('static', filename='img/chart.png') }}" alt="chart icon"> <p>TROPHY HISTORY</p>  
                 </div>
             </a>
+            {% endif %}
+            {% if log_link != "" %}
             <a href="{{ log_link }}" class="link">
                 <div class="button_lb">
                     <img class="icon" src="{{ url_for('static', filename='img/log.png') }}" alt="log icon"> <p>CLUB LOG</p>  
                 </div>
             </a>
+            {% endif %}
         </div>
         {% endif %}
 
