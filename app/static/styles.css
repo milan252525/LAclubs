@@ -281,6 +281,14 @@ p.nothing {
     width: 95vw;
 }
 
+#log_area {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+    width: 95vw;
+}
+
 
 @media (max-width: 1400px) {
     .club {

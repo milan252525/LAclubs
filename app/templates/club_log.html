@@ -17,11 +17,26 @@
             <h1 id="title">{{ name }} LOG</h1>
         </div>
 
-        <h1>COMING SOON</h1>
+        <h1 class="error"></h1>
 
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" nonce="{{ csp_nonce() }}"></script>
+        <div id="log_area"></div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" nonce="{{ csp_nonce() }}"></script>
         <script nonce="{{ csp_nonce() }}">
-            console.log("coming soon");
-        </script> -->
+            $( document ).ready(() => {
+                fetch("{{ request_url|safe }}")
+                .then(response => response.json())
+                .then(result => draw_log(result))
+            });
+
+            function draw_log(log) {
+                let log_area = $( "#log_area" );
+                log.forEach(entry => {
+                    log_area.append(
+                        $( "<div>" ).text(entry)
+                    );
+                });
+            }
+        </script>
     </body>
 </html>
