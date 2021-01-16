@@ -76,8 +76,4 @@
     .log_entry .time {
         width: 20vw;
     }
-
-    #log_area {
-        font-size: 90%;
-    }
 }
