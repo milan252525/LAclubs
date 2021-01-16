@@ -37,7 +37,7 @@
                         log_area.append( 
                             $( "<div>" )
                             .addClass("log_entry")
-                            .attr("id", "leave")
+                            .attr("id", "join")
                             .append(
                                 $( "<div>" )
                                 .addClass("time")
@@ -50,10 +50,20 @@
                         );
                     }
                     else if (entry.type === "leave") {
-                        log_area.append( $( "<div>" )
-                        .addClass("log_entry")
-                        .attr("id", "join")
-                        .text(entry.time + ": " + entry.name + " left"));
+                        log_area.append( 
+                            $( "<div>" )
+                            .addClass("log_entry")
+                            .attr("id", "leave")
+                            .append(
+                                $( "<div>" )
+                                .addClass("time")
+                                .text(entry.time)
+                            ).append(
+                                $( "<div>" )
+                                .addClass("data")
+                                .text(entry.name + " left")
+                            )
+                        );
                     }
                 });
             }
