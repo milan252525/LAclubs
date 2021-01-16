@@ -181,7 +181,7 @@ def get_club_log(tag):
                     past = membernew
                     break
             if past is None:
-                result.append({"type": "join", "name": member["name"], "time": ago})
+                result.append({"type": "join", "name": member["name"], "time": ago, "role": member["role"].replace("vice", "vice ").title()})
             else:
                 if get_role_priority(past["role"]) > get_role_priority(member["role"]):
                     result.append({"type": "demote", "name": member["name"], "time": ago, "new": member["role"].replace("vice", "vice ").title(), "old": past["role"].replace("vice", "vice ").title()})
