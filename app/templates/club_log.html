@@ -19,7 +19,7 @@
 
         <!-- <p class="category">Club:</p>
         <div id="log_area_club"></div> -->
-        <p class="category">Members:</p>
+        <!-- <p class="category">Members:</p> -->
         <div id="log_area"></div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" nonce="{{ csp_nonce() }}"></script>
@@ -67,7 +67,7 @@
                             ).append(
                                 $( "<div>" )
                                 .addClass("data")
-                                .text(entry.name + " left")
+                                .text(entry.name + " left (" + entry.role + ")")
                             )
                         );
                     }

@@ -184,9 +184,9 @@ def get_club_log(tag):
                 result.append({"type": "join", "name": member["name"], "time": ago})
             else:
                 if get_role_priority(past["role"]) > get_role_priority(member["role"]):
-                    result.append({"type": "demote", "name": member["name"], "time": ago, "new": member["role"], "old": past["role"]})
+                    result.append({"type": "demote", "name": member["name"], "time": ago, "new": member["role"].replace("vice", "vice ").title(), "old": past["role"].replace("vice", "vice ").title()})
                 elif get_role_priority(past["role"]) < get_role_priority(member["role"]):
-                    result.append({"type": "promote", "name": member["name"], "time": ago, "new": member["role"], "old": past["role"]})
+                    result.append({"type": "promote", "name": member["name"], "time": ago, "new": member["role"].replace("vice", "vice ").title(), "old": past["role"].replace("vice", "vice ").title()})
                 if past["name"] != member["name"]:
                     result.append({"type": "name", "time": ago, "old" : past["name"], "new": member["name"]})
         
@@ -198,7 +198,7 @@ def get_club_log(tag):
                     future = memberold
                     break
             if future is None:
-                result.append({"type": "leave", "name": member["name"], "time": ago, "role": member["role"]})
+                result.append({"type": "leave", "name": member["name"], "time": ago, "role": member["role"].replace("vice", "vice ").title()})
     return result
 
 def get_club_name(tag):
