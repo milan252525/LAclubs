@@ -37,6 +37,8 @@
     border: 1px solid black;
     border-right: none;
     text-align: center;
+
+    justify-content: center;
 }
 
 .log_entry .data {
