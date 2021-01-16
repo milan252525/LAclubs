@@ -53,17 +53,17 @@
 }
 
 #leave .data{
-    background-color: lightpink;
+    background-color: rgb(235, 75, 83);
     border: 1px solid purple;
 }
 
 #promote .data {
     background-color: limegreen;
-    border: 1px solid lime;
+    border: 1px solid darkgreen;
 }
 
 #demote .data {
-    background-color: lightcoral;
+    background-color: rgb(235, 75, 83);
     border: 1px solid red;
 }
 
