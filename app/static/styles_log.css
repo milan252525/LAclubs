@@ -72,7 +72,7 @@
     border: 1px solid blue;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     .log_entry .time {
         width: 20vw;
     }
