@@ -17,7 +17,7 @@
             <h1 id="title">{{ name }} LOG</h1>
         </div>
 
-        <h1 class="error"></h1>
+        <h1 class="error">COMING SOON</h1>
 
         <div id="log_area"></div>
 
@@ -32,9 +32,12 @@
             function draw_log(log) {
                 let log_area = $( "#log_area" );
                 log.forEach(entry => {
-                    log_area.append(
-                        $( "<div>" ).text(entry)
-                    );
+                    if (entry.type === "join") {
+                        log_area.append( $( "<div>" ).text(entry.name + " joined"));
+                    }
+                    else if (entry.type === "leave") {
+                        log_area.append( $( "<div>" ).text(entry.name + " left"));
+                    }
                 });
             }
         </script>
