@@ -6,6 +6,12 @@
     margin-top: 2vh;
     margin-bottom: 2vh;
     width: 95vw;
+
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .log_entry {
@@ -17,7 +23,6 @@
 
 .log_entry .time {
     background-color: whitesmoke;
-    height: 5vh;
     margin: 0;
     margin-right: 1vw;
     padding-left: 10px;
@@ -25,7 +30,6 @@
 }
 
 .log_entry .data {
-    
 }
 
 #join {
