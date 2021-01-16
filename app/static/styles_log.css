@@ -38,12 +38,12 @@
     padding-left: 1vw;
 }
 
-.log_entry #join {
+#join .data {
     background-color: lightgreen;
     border: 1px solid green;
 }
 
-.log_entry #leave  {
+#leave .data{
     background-color: rgb(236, 45, 54);
     border: 1px solid red;
 }
