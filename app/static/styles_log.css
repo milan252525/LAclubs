@@ -6,6 +6,7 @@
     margin-top: 2vh;
     margin-bottom: 2vh;
     width: 95vw;
+    font-size: 50%;
 }
 
 .log_entry {
@@ -29,6 +30,7 @@
     height: 100%;
 
     border: 1px solid black;
+    border-right: none;
     text-align: center;
 }
 
@@ -46,4 +48,10 @@
 #leave .data{
     background-color: rgb(236, 45, 54);
     border: 1px solid red;
+}
+
+@media (max-width: 800px) {
+    .log_entry .time {
+        width: 20vw;
+    }
 }

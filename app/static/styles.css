@@ -283,7 +283,7 @@ p.nothing {
     width: 95vw;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 800px) {
     .club {
         width: 95vw;
     }
