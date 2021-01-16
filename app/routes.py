@@ -90,7 +90,7 @@ def history_club():
     return resp
 
 @app.route('/history/log')
-def history_club():
+def history_log():
     tag = request.args.get('tag', default = "")
     url = f"/api/history/club?tag={tag}"
     name = get_data.get_club_name(tag)
