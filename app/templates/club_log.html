@@ -17,6 +17,9 @@
             <h1 id="title">{{ name }} LOG</h1>
         </div>
 
+        <p class="category">Club:</p>
+        <div id="log_area_club"></div>
+        <p class="category">Members:</p>
         <div id="log_area"></div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" nonce="{{ csp_nonce() }}"></script>
@@ -31,10 +34,20 @@
                 let log_area = $( "#log_area" );
                 log.forEach(entry => {
                     if (entry.type === "join") {
-                        log_area.append( $( "<div>" )
-                        .addClass("log_entry")
-                        .attr("id", "leave")
-                        .text(entry.time + ": " + entry.name + " joined"));
+                        log_area.append( 
+                            $( "<div>" )
+                            .addClass("log_entry")
+                            .attr("id", "leave")
+                            .append(
+                                $( "<div>" )
+                                .addClass("time")
+                                .text(entry.time)
+                            ).append(
+                                $( "<div>" )
+                                .addClass("data")
+                                .text(entry.name + " joined")
+                            )
+                        );
                     }
                     else if (entry.type === "leave") {
                         log_area.append( $( "<div>" )

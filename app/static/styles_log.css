@@ -3,7 +3,7 @@
 #log_area {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 4vh;
+    margin-top: 2vh;
     margin-bottom: 2vh;
     width: 95vw;
 }
@@ -11,7 +11,21 @@
 .log_entry {
     width: 90vw;
     padding: 3px;
+    padding-left: 10px;
     margin-bottom: 5px;
+
+    display: inline-flex;
+}
+
+.log_entry .time {
+    position: relative;
+    font-size: smaller;
+}
+
+.log_entry .data {
+    position: relative;
+    font-size: medium;
+    top: 1vh;
 }
 
 #join {
