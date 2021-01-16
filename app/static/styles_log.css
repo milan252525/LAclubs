@@ -1,0 +1,25 @@
+/* CLUB LOG */
+
+#log_area {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+    width: 95vw;
+}
+
+.log_entry {
+    width: 90vw;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+
+#join {
+    background-color: lightgreen;
+    border: 1px solid green;
+}
+
+#leave {
+    background-color: rgb(236, 45, 54);
+    border: 1px solid red;
+}
