@@ -283,13 +283,13 @@ p.nothing {
     width: 95vw;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     .club {
         width: 95vw;
     }
 
     body {
-        font-size: 70%;
+        font-size: 80%;
     }
 
     #smaller_site_top h1 {
@@ -313,7 +313,7 @@ p.nothing {
     }
 
     table#members {
-        font-size: 10pt;
+        font-size: 70%;
         width: 100%;
     }
 }
