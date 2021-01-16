@@ -17,7 +17,7 @@
             <h1 id="title">{{ name }} LOG</h1>
         </div>
 
-        <h1 class="error">COMING SOON</h1>
+        <h1 class="error">COMING SOON (W.I.P.)</h1>
 
         <div id="log_area"></div>
 
@@ -33,10 +33,10 @@
                 let log_area = $( "#log_area" );
                 log.forEach(entry => {
                     if (entry.type === "join") {
-                        log_area.append( $( "<div>" ).text(entry.name + " joined"));
+                        log_area.append( $( "<div>" ).attr("id", "leave").text(entry.time + ": " + entry.name + " joined"));
                     }
                     else if (entry.type === "leave") {
-                        log_area.append( $( "<div>" ).text(entry.name + " left"));
+                        log_area.append( $( "<div>" ).attr("id", "join").text(entry.time + ": " + entry.name + " left"));
                     }
                 });
             }

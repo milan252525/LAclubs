@@ -273,6 +273,8 @@ p.nothing {
     margin-top: 3vh;
 }
 
+/* CLUB HISTORY */
+
 #chart_container {
     margin-left: auto;
     margin-right: auto;
@@ -281,12 +283,26 @@ p.nothing {
     width: 95vw;
 }
 
+/* CLUB LOG */
+
 #log_area {
     margin-left: auto;
     margin-right: auto;
     margin-top: 4vh;
     margin-bottom: 2vh;
     width: 95vw;
+}
+
+#join {
+    background-color: lightgreen;
+    border: 1px solid green;
+    width: 90vw;
+}
+
+#leave {
+    background-color: rgb(236, 45, 54);
+    border: 1px solid red;
+    width: 90vw;
 }
 
 
