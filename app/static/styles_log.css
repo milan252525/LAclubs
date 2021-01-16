@@ -58,12 +58,12 @@
 }
 
 #promote .data {
-    background-color: rgb(55, 221, 55);
+    background-color: rgb(48, 197, 48);
     border: 1px solid darkgreen;
 }
 
 #demote .data {
-    background-color: rgb(230, 41, 230);
+    background-color: rgb(231, 58, 231);
     border: 1px solid red;
 }
 
