@@ -185,7 +185,7 @@ def get_club_log(tag):
             else:
                 if get_role_priority(past["role"]) > get_role_priority(member["role"]):
                     result.append({"type": "demote", "name": member["name"], "time": ago, "new": member["role"], "old": past["role"]})
-                elif get_role_priority(past["role"]) > get_role_priority(member["role"]):
+                elif get_role_priority(past["role"]) < get_role_priority(member["role"]):
                     result.append({"type": "promote", "name": member["name"], "time": ago, "new": member["role"], "old": past["role"]})
                 if past["name"] != member["name"]:
                     result.append({"type": "name", "time": ago, "old" : past["name"], "new": member["name"]})
