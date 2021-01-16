@@ -286,11 +286,11 @@ p.nothing {
 @media (max-width: 1200px) {
     .club {
         width: 95vw;
-        font-size: 80%;
+        font-size: 85%;
     }
 
     body {
-        font-size: 85%;
+        font-size: 90%;
     }
 
     #smaller_site_top h1 {
@@ -314,7 +314,7 @@ p.nothing {
     }
 
     table#members {
-        font-size: 80%;
+        font-size: 85%;
         width: 100%;
     }
 }
