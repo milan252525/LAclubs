@@ -283,9 +283,8 @@ p.nothing {
     width: 95vw;
 }
 
-hl {
+hr {
     1pt solid lightgray;
-    width: 90%;
 }
 
 @media (max-width: 1200px) {
