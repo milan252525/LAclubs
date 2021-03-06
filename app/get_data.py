@@ -127,7 +127,7 @@ def get_player_history(tag):
             name = entry["members"][0]["name"]
         times.append(entry["time"])
         trophies.append(entry["members"][0]["trophies"])
-    return {"trophies" : trophies[:100], "times" : times[:100], "status" : "ok", "name" : name}
+    return {"trophies" : trophies[100:], "times" : times[100:], "status" : "ok", "name" : name}
 
 def get_club_history(tag):
     filter = {"tag": tag}
