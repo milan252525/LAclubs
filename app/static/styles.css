@@ -125,6 +125,13 @@ p.category {
     margin-bottom: 2vh;
 }
 
+p.subcategory {
+    margin-left: 1vw;
+    font-size: 110%;
+    margin-top: 0;
+    margin-bottom: 0.5vh;
+}
+
 .club_area {
     display: flex;
     flex-direction: row;
