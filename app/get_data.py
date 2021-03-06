@@ -127,7 +127,7 @@ def get_player_history(tag):
             name = entry["members"][0]["name"]
         times.append(entry["time"])
         trophies.append(entry["members"][0]["trophies"])
-    return {"trophies" : trophies, "times" : times, "status" : "ok", "name" : name}
+    return {"trophies" : trophies[:100], "times" : times[:100], "status" : "ok", "name" : name}
 
 def get_club_history(tag):
     filter = {"tag": tag}
@@ -201,7 +201,7 @@ def get_club_log(tag):
                     break
             if future is None:
                 result.append({"type": "leave", "name": member["name"], "time": ago, "role": member["role"].replace("vice", "vice ").title()})
-    return result
+    return result[:150]
 
 def get_club_name(tag):
     regex = re.compile('[^0289PYLQGRJCUV]')
