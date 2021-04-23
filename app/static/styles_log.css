@@ -73,8 +73,8 @@
 }
 
 #requirement .data {
-    background-color: yellow;
-    border: 1px solid rgb(248, 225, 15);
+    background-color: rgb(247, 255, 89);
+    border: 1px solid black;
 }
 
 @media (max-width: 1200px) {
