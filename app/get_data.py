@@ -114,7 +114,8 @@ def get_all_players(region, country):
     return result
 
 def get_player_history(tag):
-    filter = {"members.tag": tag}
+    filter_time = datetime.datetime.now() - datetime.timedelta(days=90)
+    filter = {"members.tag": tag, "time": {"$gt" : filter_time}}
     limit_field = {"members.$":1, "time":1}
     history = mongo.db.club_history.find(filter, limit_field).sort("time", 1)
     if history.count() == 0:
@@ -127,7 +128,7 @@ def get_player_history(tag):
             name = entry["members"][0]["name"]
         times.append(entry["time"])
         trophies.append(entry["members"][0]["trophies"])
-    return {"trophies" : trophies[-200:], "times" : times[-200:], "status" : "ok", "name" : name}
+    return {"trophies" : trophies, "times" : times, "status" : "ok", "name" : name}
 
 def get_club_history(tag):
     filter = {"tag": tag}
@@ -157,7 +158,8 @@ def get_role_priority(role):
         
 
 def get_club_log(tag):
-    filter = {"tag": tag}
+    filter_time = datetime.datetime.now() - datetime.timedelta(days=10)
+    filter = {"tag": tag, "time": {"$gt" : filter_time}}
     history = mongo.db.club_history.find(filter).sort("time", -1)
     if history.count() == 0:
         return {"status" : "not_found"}
@@ -179,7 +181,7 @@ def get_club_log(tag):
 
         if "type" in current and "type" in previous:
             if current["type"] != previous["type"]:
-               result.append({"type": "type", "new": current["type"], "old": previous["type"], "time": ago})
+               result.append({"type": "type", "new": current["type"], "old": previous["type"].replace("only", " only").title(), "time": ago})
 
         if "badge" in current and "badge" in previous:
             if current["badge"] != previous["badge"]:
@@ -213,7 +215,7 @@ def get_club_log(tag):
                     break
             if future is None:
                 result.append({"type": "leave", "name": member["name"], "time": ago, "role": member["role"].replace("vice", "vice ").title()})
-    return result[:150]
+    return result
 
 def get_club_name(tag):
     regex = re.compile('[^0289PYLQGRJCUV]')
