@@ -72,7 +72,7 @@
     border: 1px solid blue;
 }
 
-#requirement .data, #type .data, #description .data {
+#requirement .data, #type .data, #desc .data {
     background-color: rgb(247, 255, 89);
     border: 1px solid black;
 }
