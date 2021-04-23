@@ -72,6 +72,11 @@
     border: 1px solid blue;
 }
 
+#requirement .data {
+    background-color: yellow;
+    border: 1px solid rgb(248, 225, 15);
+}
+
 @media (max-width: 1200px) {
     .log_entry .time {
         width: 20vw;

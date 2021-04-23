@@ -170,8 +170,16 @@ def get_club_log(tag):
         current_time = datetime.datetime.fromtimestamp(current["time"])
         ago = timeago.format(current_time, datetime.datetime.now(), "en_short")
 
-        if current["description"] != current["description"]:
+        if current["description"] != previous["description"]:
             result.append({"type": "desc", "new": current["description"], "time": ago})
+        
+        if "required" in current and "required" in previous:
+            if current["required"] != previous["required"]:
+               result.append({"type": "requirement", "new": current["required"], "old": previous["required"], "time": ago})
+
+        if "badge" in current and "badge" in previous:
+            if current["badge"] != previous["badge"]:
+               result.append({"type": "badge", "new": current["badge"], "old": previous["badge"], "time": ago}) 
 
         for member in current["members"]:
             tag = member["tag"]
