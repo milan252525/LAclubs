@@ -151,6 +151,46 @@
                             )
                         );
                     }
+                    else if (entry.type === "type") {
+                        log_area.append( 
+                            $( "<div>" )
+                            .addClass("log_entry")
+                            .attr("id", "type")
+                            .append(
+                                $( "<div>" )
+                                .addClass("time")
+                                .append(
+                                    $( "<p>" ).text(entry.time)
+                                )
+                            ).append(
+                                $( "<div>" )
+                                .addClass("data")
+                                .append(
+                                    $( "<p>" ).text("Club status changed from " + entry.old + " to " + entry.new)
+                                )
+                            )
+                        );
+                    }
+                    else if (entry.type === "description") {
+                        log_area.append( 
+                            $( "<div>" )
+                            .addClass("log_entry")
+                            .attr("id", "description")
+                            .append(
+                                $( "<div>" )
+                                .addClass("time")
+                                .append(
+                                    $( "<p>" ).text(entry.time)
+                                )
+                            ).append(
+                                $( "<div>" )
+                                .addClass("data")
+                                .append(
+                                    $( "<p>" ).text("Club description changed to " + entry.new)
+                                )
+                            )
+                        );
+                    }
                 });
             }
         </script>
