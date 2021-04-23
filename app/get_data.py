@@ -215,6 +215,7 @@ def get_club_log(tag):
                     break
             if future is None:
                 result.append({"type": "leave", "name": member["name"], "time": ago, "role": member["role"].replace("vice", "vice ").title()})
+    result.append({"type": "desc", "new": history[0]["description"], "time": "test"})
     return result
 
 def get_club_name(tag):
