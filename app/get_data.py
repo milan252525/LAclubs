@@ -114,7 +114,7 @@ def get_all_players(region, country):
     return result
 
 def get_player_history(tag):
-    filter_time = datetime.datetime.now() - datetime.timedelta(days=90)
+    filter_time = int(datetime.datetime.timestamp(datetime.datetime.now() - datetime.timedelta(days=90)))
     filter = {"members.tag": tag, "time": {"$gt" : filter_time}}
     limit_field = {"members.$":1, "time":1}
     history = mongo.db.club_history.find(filter, limit_field).sort("time", 1)
@@ -158,7 +158,7 @@ def get_role_priority(role):
         
 
 def get_club_log(tag):
-    filter_time = datetime.datetime.now() - datetime.timedelta(days=10)
+    filter_time = int(datetime.datetime.timestamp(datetime.datetime.now() - datetime.timedelta(days=10)))
     filter = {"tag": tag, "time": {"$gt" : filter_time}}
     history = mongo.db.club_history.find(filter).sort("time", -1)
     if history.count() == 0:
