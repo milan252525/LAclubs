@@ -181,7 +181,7 @@ def get_club_log(tag):
 
         if "type" in current and "type" in previous:
             if current["type"] != previous["type"]:
-               result.append({"type": "type", "new": current["type"], "old": previous["type"].replace("only", " only").title(), "time": ago})
+               result.append({"type": "type", "new": current["type"].replace("only", " only").capitalize(), "old": previous["type"].replace("only", " only").capitalize(), "time": ago})
 
         if "badge" in current and "badge" in previous:
             if current["badge"] != previous["badge"]:
