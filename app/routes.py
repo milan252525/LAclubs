@@ -156,7 +156,7 @@ def favicon():
 def bs():
     url = request.args.get('url', default = "https://laclubs.net")
     title = request.args.get('title', default = "")
-    return redirect("brawlstars://webview?page={url}&popup_title={title}", code=302)
+    return redirect(f"brawlstars://webview?page={url}&popup_title={title}", code=302)
 
 @app.after_request
 def add_header(resp):
