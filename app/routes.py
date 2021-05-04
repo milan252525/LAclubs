@@ -152,6 +152,12 @@ def api_history_log():
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
+@app.route('/bs')
+def bs():
+    url = request.args.get('url', default = "https://laclubs.net")
+    title = request.args.get('title', default = "")
+    return redirect("brawlstars://webview?page={url}&popup_title={title}", code=302)
+
 @app.after_request
 def add_header(resp):
     resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
