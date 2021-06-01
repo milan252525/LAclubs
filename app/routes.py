@@ -186,7 +186,7 @@ def clubs(ctx, region: Regions = None, country: Countries = None):
     "See all LA clubs based on region! (W.I.P.)"
     if regions is None and country is None:
         clubs = get_data.get_clubs(region=None, country=None, type="all", members=None)
-    else if country is not None:
+    elif country is not None:
         clubs = get_data.get_clubs(region=None, country=country, type=None, members=None)
     else:
         clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
