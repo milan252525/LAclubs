@@ -172,7 +172,7 @@ def clubs_to_embeds(clubs, title):
             fields.append(
                 embed.Field(
                     name=f"{club['name']}",
-                    value=f"trophies {club['trophies']}"
+                    value=f"<:bstrophy:552558722770141204> {club['trophies']}"
                 )
             )
         embeds.append(
