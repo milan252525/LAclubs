@@ -18,9 +18,9 @@ mongo = PyMongo(app)
 #discord = DiscordOAuth2Session(app)
 
 discord = DiscordInteractions(app)
-app.config["DISCORD_CLIENT_ID"] = os.environ["DISCORD_CLIENT_ID"]
-app.config["DISCORD_PUBLIC_KEY"] = os.environ["DISCORD_PUBLIC_KEY"]
-app.config["DISCORD_CLIENT_SECRET"] = os.environ["DISCORD_CLIENT_SECRET"]
+app.config["DISCORD_CLIENT_ID"] = 795325486242857000
+app.config["DISCORD_PUBLIC_KEY"] = "KEY"
+app.config["DISCORD_CLIENT_SECRET"] = "SECRET"
 
 csp = {
     "default-src" : [
