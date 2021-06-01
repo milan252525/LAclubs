@@ -205,7 +205,7 @@ def clubs(ctx, region: Regions = None, country: Countries = None):
             )
         embeds.append(
             Embed(
-                title=f"LA - {regs_reverse[region]} {country} {type} clubs",
+                title=f"LA - {region} {country} {type} clubs",
                 fields=fields
             )
         )
