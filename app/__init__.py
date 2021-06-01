@@ -21,8 +21,6 @@ app.config["DISCORD_CLIENT_ID"] = 795325486242857000
 app.config["DISCORD_PUBLIC_KEY"] = "KEY"
 app.config["DISCORD_CLIENT_SECRET"] = "SECRET"
 
-discord.set_route("/interactions")
-
 csp = {
     "default-src" : [
         "'self'",
@@ -49,4 +47,6 @@ csp = {
 Talisman(app, content_security_policy=csp, content_security_policy_nonce_in=['script-src'])
 
 from app import routes
+
+discord.set_route("/interactions")
 discord.update_slash_commands()
