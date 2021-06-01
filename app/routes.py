@@ -170,15 +170,17 @@ regs = {
     "North America": "NA",
     "Latin America": "LATAM"
 }
-
 Regions = enum.Enum("Regions", regs)
+regs_reverse = dict()
+for key, value in regs.items():
+    regs_reverse[value] = key
     
 @discord.command(annotations={"region": "Choose region"})
 def clubs(ctx, region: Regions):
     "See all LA clubs based on region! (W.I.P.)"
     clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
     return Response(embed=Embed(
-        title=f"LA - {region.name} clubs",
+        title=f"LA - {regs_reverse[region]} clubs",
         description="\n".join([club['name'] for club in clubs]),
     ))
 
