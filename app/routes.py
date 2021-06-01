@@ -184,7 +184,7 @@ for key, value in regs.items():
 @discord.command(annotations={"region": "Choose region", "country": "Choose country"})
 def clubs(ctx, region: Regions = None, country: Countries = None):
     "See all LA clubs based on region! (W.I.P.)"
-    if regions is None and country is None:
+    if region is None and country is None:
         clubs = get_data.get_clubs(region=None, country=None, type="all", members=None)
     elif country is not None:
         clubs = get_data.get_clubs(region=None, country=country, type=None, members=None)
