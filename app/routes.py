@@ -171,14 +171,25 @@ regs = {
     "Latin America": "LATAM"
 }
 Regions = enum.Enum("Regions", regs)
+countries = {
+    "United Kingdom": "UK",
+    "Spain": "SPAIN",
+    "Portugal": "PORTUGAL"
+}
+Countries = enum.Enum("Regions", regs)
 regs_reverse = dict()
 for key, value in regs.items():
     regs_reverse[value] = key
     
-@discord.command(annotations={"region": "Choose region"})
-def clubs(ctx, region: Regions):
+@discord.command(annotations={"region": "Choose region", "country": "Choose country"})
+def clubs(ctx, region: Regions = None, country: Countries = None):
     "See all LA clubs based on region! (W.I.P.)"
-    clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
+    if regions is None and country is None:
+        clubs = get_data.get_clubs(region=None, country=None, type="all", members=None)
+    else if country is not None:
+        clubs = get_data.get_clubs(region=None, country=country, type=None, members=None)
+    else:
+        clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
     
     embeds = []
     chunks = 20
@@ -194,7 +205,7 @@ def clubs(ctx, region: Regions):
             )
         embeds.append(
             Embed(
-                title=f"LA - {regs_reverse[region]} clubs",
+                title=f"LA - {regs_reverse[region]} {country} {type} clubs",
                 fields=fields
             )
         )
