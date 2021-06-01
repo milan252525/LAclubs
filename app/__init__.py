@@ -3,6 +3,7 @@ from flask_talisman import Talisman
 from flask_pymongo import PyMongo
 #from flask_discord import DiscordOAuth2Session
 from flask_discord_interactions import DiscordInteractions
+import os
 
 app = Flask(__name__)
 
@@ -17,9 +18,9 @@ mongo = PyMongo(app)
 #discord = DiscordOAuth2Session(app)
 
 discord = DiscordInteractions(app)
-app.config["DISCORD_CLIENT_ID"] = 795325486242857000
-app.config["DISCORD_PUBLIC_KEY"] = "KEY"
-app.config["DISCORD_CLIENT_SECRET"] = ["SECRET"]
+app.config["DISCORD_CLIENT_ID"] = os.environ["DISCORD_CLIENT_ID"]
+app.config["DISCORD_PUBLIC_KEY"] = os.environ["DISCORD_PUBLIC_KEY"]
+app.config["DISCORD_CLIENT_SECRET"] = os.environ["DISCORD_CLIENT_SECRET"]
 
 csp = {
     "default-src" : [
@@ -49,10 +50,11 @@ Talisman(app, content_security_policy=csp, content_security_policy_nonce_in=['sc
 
 @discord.command()
 def ping(ctx):
+    "Respond with a friendly 'pong'!"
     return "Pong!"
 
 discord.set_route("/interactions")
-discord.update_slash_commands()
+discord.update_slash_commands(401883208511389716)
 
 from app import routes
 
