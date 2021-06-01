@@ -8,3 +8,4 @@ Flask-Discord==0.1.63
 gevent
 pyjwt==1.7.1
 timeago
+flask_discord_interactions
