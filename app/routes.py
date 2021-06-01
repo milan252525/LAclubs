@@ -1,6 +1,6 @@
 from flask import render_template, request, send_from_directory, make_response, redirect, url_for, jsonify, escape
 from app import app, discord
-from flask_discord import requires_authorization, Unauthorized
+#from flask_discord import requires_authorization, Unauthorized
 from . import get_data
 import os
 import re
@@ -152,12 +152,6 @@ def api_history_log():
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-@app.route('/bs')
-def bs():
-    url = request.args.get('url', default = "https://laclubs.net")
-    title = request.args.get('title', default = "")
-    return redirect(f"brawlstars://webview?page={url}&popup_title={title}", code=302)
-
 @app.after_request
 def add_header(resp):
     resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
@@ -166,29 +160,12 @@ def add_header(resp):
     resp.headers['X-XSS-Protection'] = '1; mode=block'
     return resp
 
-''' @app.route("/login/")
-def login():
-    return discord.create_session(scope=["identify"])
+@discord.command()
+def ping(ctx):
+    return "Pong!"
 
-@app.route("/me/")
-@requires_authorization
-def me():
-    user = discord.fetch_user()
-    return f"""
-    <html>
-        <head>
-            <title>{user.name}</title>
-        </head>
-        <body>
-            <img src='{user.avatar_url}' />
-        </body>
-    </html>"""
-
-@app.route("/callback/")
-def callback():
-    discord.callback()
-    return redirect(url_for(".me"))
-
-@app.errorhandler(Unauthorized)
-def redirect_unauthorized(e):
-    return redirect(url_for("login")) '''
+#@app.route('/bs')
+#def bs():
+#    url = request.args.get('url', default = "https://laclubs.net")
+#    title = request.args.get('title', default = "")
+#    return redirect(f"brawlstars://webview?page={url}&popup_title={title}", code=302)
