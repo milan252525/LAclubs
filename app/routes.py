@@ -5,6 +5,7 @@ from app import app, discord
 from . import get_data
 import os
 import re
+import enum
 
 @app.route('/')
 @app.route('/index')
@@ -161,11 +162,18 @@ def add_header(resp):
     resp.headers['X-XSS-Protection'] = '1; mode=block'
     return resp
 
+class Regions(enum.Enum):
+    EU = "Europe"
+    AS = "Asia"
+    NA = "North America"
+    LATAM = "Latin America"
+    ME = "Middle East"
+    AUS = "Australia"
 
-@discord.command()
-def ping(ctx):
-    "Respond with a friendly 'pong'!"
-    return "Pong!"
+@discord.command(annotations={"region": "Choose region"})
+def clubs(ctx, region: Regions):
+    "See all LA clubs based on region!"
+    return f"You chose {region}"
 
 #@app.route('/bs')
 #def bs():
