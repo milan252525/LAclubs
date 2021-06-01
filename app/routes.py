@@ -205,7 +205,7 @@ def clubs(ctx, region: Regions = None, country: Countries = None):
             )
         embeds.append(
             Embed(
-                title=f"LA - {region} {country} {type} clubs",
+                title=f"LA - {region} {country} clubs",
                 fields=fields
             )
         )
