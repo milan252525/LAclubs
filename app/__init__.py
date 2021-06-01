@@ -46,7 +46,13 @@ csp = {
 
 Talisman(app, content_security_policy=csp, content_security_policy_nonce_in=['script-src'])
 
-from app import routes
+
+@discord.command()
+def ping(ctx):
+    return "Pong!"
 
 discord.set_route("/interactions")
 discord.update_slash_commands()
+
+from app import routes
+
