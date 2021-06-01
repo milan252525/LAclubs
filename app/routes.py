@@ -163,12 +163,12 @@ def add_header(resp):
     return resp
 
 class Regions(enum.Enum):
-    Europe = "EU"
-    Asia = "AS"
-    North_America = "NA"
-    Latin_America = "LATAM"
-    Middle_East = "ME"
-    Australia = "AU"
+    "Europe" = "EU"
+    "Asia" = "AS"
+    "North_America" = "NA"
+    "Latin_America" = "LATAM"
+    "Middle_East" = "ME"
+    "Australia" = "AU"
 
 @discord.command(annotations={"region": "Choose region"})
 def clubs(ctx, region: Regions):
