@@ -17,7 +17,7 @@ mongo = PyMongo(app)
 #discord = DiscordOAuth2Session(app)
 
 discord = DiscordInteractions(app)
-app.config["DISCORD_CLIENT_ID"] = 795325486242857000
+app.config["DISCORD_CLIENT_ID"] = "795325486242857000"
 app.config["DISCORD_PUBLIC_KEY"] = "KEY"
 app.config["DISCORD_CLIENT_SECRET"] = "SECRET"
 
