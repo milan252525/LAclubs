@@ -177,7 +177,7 @@ Regions = enum.Enum("Regions", regs)
 def clubs(ctx, region: Regions):
     "See all LA clubs based on region! (W.I.P.)"
     clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
-    return str(clubs[0])
+    return str(list(clubs[0].keys()))
 
 #@app.route('/bs')
 #def bs():
