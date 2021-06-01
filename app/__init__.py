@@ -48,11 +48,6 @@ Talisman(app, content_security_policy=csp, content_security_policy_nonce_in=['sc
 
 from app import routes
 
-@discord.command()
-def ping(ctx):
-    "Respond with a friendly 'pong'!"
-    return "Pong!"
-
 discord.set_route("/interactions")
 discord.update_slash_commands()
 
