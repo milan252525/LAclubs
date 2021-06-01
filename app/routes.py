@@ -162,14 +162,17 @@ def add_header(resp):
     resp.headers['X-XSS-Protection'] = '1; mode=block'
     return resp
 
-class Regions(enum.Enum):
-    "Europe" = "EU"
-    "Asia" = "AS"
-    "North_America" = "NA"
-    "Latin_America" = "LATAM"
-    "Middle_East" = "ME"
-    "Australia" = "AU"
+regs = {
+    "Europe": "EU",
+    "Asia": "AS",
+    "North America": "NA",
+    "Latin America": "LATAM",
+    "Middle East": "ME",
+    "Australia": "AU"
+}
 
+Regions = enum.Enum("Regions", regs)
+    
 @discord.command(annotations={"region": "Choose region"})
 def clubs(ctx, region: Regions):
     "See all LA clubs based on region!"
