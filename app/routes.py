@@ -243,7 +243,7 @@ def country(ctx, country: Countries):
 @discord.command()
 def low(ctx):
     "Clubs with low member count"
-    clubs = get_data.get_clubs(region=None, country=None, type=low, members=95)
+    clubs = get_data.get_clubs(region=None, country=None, type="low", members=95)
     embeds = clubs_to_embeds(clubs, f"LA - Low clubs")
     return Response(embeds=embeds)
 
