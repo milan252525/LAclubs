@@ -1,5 +1,5 @@
 from flask import render_template, request, send_from_directory, make_response, redirect, url_for, jsonify, escape
-from flask_discord_interactions import Response, Member, Channel, Role
+from flask_discord_interactions import Response, Embed, embed
 from app import app, discord
 #from flask_discord import requires_authorization, Unauthorized
 from . import get_data
@@ -177,7 +177,10 @@ Regions = enum.Enum("Regions", regs)
 def clubs(ctx, region: Regions):
     "See all LA clubs based on region! (W.I.P.)"
     clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
-    return str(list(clubs[0].keys()))
+    return Response(embed=Embed(
+        title=f"LA - {region.name} clubs",
+        description="\n".join([club['name'] for club in clubs]),
+    ))
 
 #@app.route('/bs')
 #def bs():
