@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_talisman import Talisman
 from flask_pymongo import PyMongo
-from flask_discord import DiscordOAuth2Session
+#from flask_discord import DiscordOAuth2Session
 from flask_discord_interactions import DiscordInteractions
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ mongo = PyMongo(app)
 #discord = DiscordOAuth2Session(app)
 
 discord = DiscordInteractions(app)
-app.config["DISCORD_CLIENT_ID"] = "795325486242857000"
+app.config["DISCORD_CLIENT_ID"] = 795325486242857000
 app.config["DISCORD_PUBLIC_KEY"] = "KEY"
 app.config["DISCORD_CLIENT_SECRET"] = "SECRET"
 
