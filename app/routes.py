@@ -237,7 +237,7 @@ for key, value in countries.items():
 def country(ctx, country: Countries):
     "Clubs from region"
     clubs = get_data.get_clubs(region=None, country=country, type=None, members=None)
-    embeds = clubs_to_embeds(clubs, f"LA - {countries_reverse[region]} clubs")
+    embeds = clubs_to_embeds(clubs, f"LA - {countries_reverse[country]} clubs")
     return Response(embeds=embeds)
 
 #@app.route('/bs')
