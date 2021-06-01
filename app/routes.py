@@ -162,35 +162,7 @@ def add_header(resp):
     resp.headers['X-XSS-Protection'] = '1; mode=block'
     return resp
 
-regs = {
-    "Asia": "AS",
-    "Australia": "AU",
-    "Europe": "EU",
-    "Middle East": "ME",
-    "North America": "NA",
-    "Latin America": "LATAM"
-}
-Regions = enum.Enum("Regions", regs)
-countries = {
-    "United Kingdom": "UK",
-    "Spain": "SPAIN",
-    "Portugal": "PORTUGAL"
-}
-Countries = enum.Enum("Regions", regs)
-regs_reverse = dict()
-for key, value in regs.items():
-    regs_reverse[value] = key
-    
-@discord.command(annotations={"region": "Choose region", "country": "Choose country"})
-def clubs(ctx, region: Regions = None, country: Countries = None):
-    "See all LA clubs based on region! (W.I.P.)"
-    if region is None and country is None:
-        clubs = get_data.get_clubs(region=None, country=None, type="all", members=None)
-    elif country is not None:
-        clubs = get_data.get_clubs(region=None, country=country, type=None, members=None)
-    else:
-        clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
-    
+def clubs_to_embeds(clubs, title):
     embeds = []
     chunks = 20
     for i in range(0, len(clubs), chunks):
@@ -205,10 +177,67 @@ def clubs(ctx, region: Regions = None, country: Countries = None):
             )
         embeds.append(
             Embed(
-                title=f"LA - {region} {country} clubs",
+                title=title,
                 fields=fields
             )
         )
+    return embeds
+
+regs = {
+    "Asia": "AS",
+    "Australia": "AU",
+    "Europe": "EU",
+    "Middle East": "ME",
+    "North America": "NA",
+    "Latin America": "LATAM"
+}
+Regions = enum.Enum("Regions", regs)
+regs_reverse = dict()
+for key, value in regs.items():
+    regs_reverse[value] = key
+    
+@discord.command(annotations={"region": "Choose region"})
+def region(ctx, region: Regions):
+    "Clubs from region"
+    clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
+    embeds = clubs_to_embeds(clubs, f"LA - {regs_reverse[region]} clubs")
+    return Response(embeds=embeds)
+
+
+countries = {
+    "United Kingdom": "UK",
+    "Spain": "SPAIN",
+    "Portugal": "PORTUGAL",
+    "Poland": "POLAND",
+    "Finland": "FINLAND",
+    "Croatia": "CROATIA",
+    "Singapore": "SINGAPORE",
+    "India": "INDIA",
+    "Bangladesh": "BANGLADESH",
+    "USA": "USA",
+    "Canada": "CANADA",
+    "Hong Kong": "HONGKONG",
+    "Argentina": "ARGENTINA",
+    "Bolivia": "BOLIVIA",
+    "Brazil": "BRAZIL",
+    "Chile": "CHILE",
+    "Dominican Republic": "DOMINICANREPUBLIC",
+    "Guatemala": "GUATEMALA",
+    "Mexico": "MEXICO",
+    "Peru": "PERU",
+    "Uruguay": "URUGUAY",
+    "Venezuela": "VENEZUELA"
+}
+Countries = enum.Enum("Countries", countries)
+countries_reverse = dict()
+for key, value in countries.items():
+    countries_reverse[value] = key
+
+@discord.command(annotations={"country": "Choose country"})
+def country(ctx, country: Countries):
+    "Clubs from region"
+    clubs = get_data.get_clubs(region=None, country=country, type=None, members=None)
+    embeds = clubs_to_embeds(clubs, f"LA - {countries_reverse[region]} clubs")
     return Response(embeds=embeds)
 
 #@app.route('/bs')
