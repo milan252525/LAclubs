@@ -188,8 +188,8 @@ def clubs(ctx, region: Regions):
         for club in chunk:
             fields.append(
                 embed.Field(
-                    name=f"{club["name"]}",
-                    value=f"trophies {club["trophies"]}"
+                    name=f"{club['name']}",
+                    value=f"trophies {club['trophies']}"
                 )
             )
         embeds.append(
