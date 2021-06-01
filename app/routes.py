@@ -171,7 +171,7 @@ def clubs_to_embeds(clubs, title):
         for club in chunk:
             fields.append(
                 embed.Field(
-                    name=f"{club['name']}",
+                    name=f"{club['name']} #{club['tag']}",
                     value=f"<:bstrophy:552558722770141204>`{club['trophies']}` <:people:449645181826760734>`{club['member_count']}/100`"
                 )
             )
