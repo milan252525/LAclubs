@@ -240,6 +240,13 @@ def country(ctx, country: Countries):
     embeds = clubs_to_embeds(clubs, f"LA - {countries_reverse[country]} clubs")
     return Response(embeds=embeds)
 
+@discord.command()
+def low(ctx):
+    "Clubs with low member count"
+    clubs = get_data.get_clubs(region=None, country=None, type=low, members=95)
+    embeds = clubs_to_embeds(clubs, f"LA - Low clubs")
+    return Response(embeds=embeds)
+
 #@app.route('/bs')
 #def bs():
 #    url = request.args.get('url', default = "https://laclubs.net")
