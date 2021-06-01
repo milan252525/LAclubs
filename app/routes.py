@@ -179,10 +179,26 @@ for key, value in regs.items():
 def clubs(ctx, region: Regions):
     "See all LA clubs based on region! (W.I.P.)"
     clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
-    return Response(embed=Embed(
-        title=f"LA - {regs_reverse[region]} clubs",
-        description="\n".join([club['name'] for club in clubs]),
-    ))
+    
+    embeds = []
+    chunks = 20
+    for i in range(0, len(clubs), chunks):
+        fields = []
+        chunk = clubs[i:i+chunks]
+        for club in chunk:
+            fields.append(
+                embed.Field(
+                    name=f"{club["name"]}",
+                    value=f"trophies {club["trophies"]}"
+                )
+            )
+        embeds.append(
+            Embed(
+                title=f"LA - {regs_reverse[region]} clubs",
+                fields=fields
+            )
+        )
+    return Response(embeds=embeds)
 
 #@app.route('/bs')
 #def bs():
