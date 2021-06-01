@@ -160,10 +160,6 @@ def add_header(resp):
     resp.headers['X-XSS-Protection'] = '1; mode=block'
     return resp
 
-@discord.command()
-def ping(ctx):
-    return "Pong!"
-
 #@app.route('/bs')
 #def bs():
 #    url = request.args.get('url', default = "https://laclubs.net")
