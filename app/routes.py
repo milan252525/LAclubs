@@ -1,4 +1,5 @@
 from flask import render_template, request, send_from_directory, make_response, redirect, url_for, jsonify, escape
+from flask_discord_interactions import Response, Member, Channel, Role
 from app import app, discord
 #from flask_discord import requires_authorization, Unauthorized
 from . import get_data
@@ -159,6 +160,12 @@ def add_header(resp):
     resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
     resp.headers['X-XSS-Protection'] = '1; mode=block'
     return resp
+
+
+@discord.command()
+def ping(ctx):
+    "Respond with a friendly 'pong'!"
+    return "Pong!"
 
 #@app.route('/bs')
 #def bs():
