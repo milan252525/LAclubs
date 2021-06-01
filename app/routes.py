@@ -163,20 +163,21 @@ def add_header(resp):
     return resp
 
 regs = {
-    "Europe": "EU",
     "Asia": "AS",
-    "North America": "NA",
-    "Latin America": "LATAM",
+    "Australia": "AU",
+    "Europe": "EU",
     "Middle East": "ME",
-    "Australia": "AU"
+    "North America": "NA",
+    "Latin America": "LATAM"
 }
 
 Regions = enum.Enum("Regions", regs)
     
 @discord.command(annotations={"region": "Choose region"})
 def clubs(ctx, region: Regions):
-    "See all LA clubs based on region!"
-    return f"You chose {region}"
+    "See all LA clubs based on region! (W.I.P.)"
+    clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
+    return str(clubs[0])
 
 #@app.route('/bs')
 #def bs():
