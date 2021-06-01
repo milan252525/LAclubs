@@ -3,7 +3,6 @@ from flask_talisman import Talisman
 from flask_pymongo import PyMongo
 #from flask_discord import DiscordOAuth2Session
 from flask_discord_interactions import DiscordInteractions
-import os
 
 app = Flask(__name__)
 
@@ -47,6 +46,7 @@ csp = {
 
 Talisman(app, content_security_policy=csp, content_security_policy_nonce_in=['script-src'])
 
+from app import routes
 
 @discord.command()
 def ping(ctx):
@@ -54,7 +54,7 @@ def ping(ctx):
     return "Pong!"
 
 discord.set_route("/interactions")
-discord.update_slash_commands(401883208511389716)
+discord.update_slash_commands()
 
-from app import routes
+
 
