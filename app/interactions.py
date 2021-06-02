@@ -70,7 +70,7 @@ def get_league_emoji(trophies : int):
 
 def clubs_to_embeds(clubs, title):
     embeds = []
-    chunks = 5
+    chunks = 10
     first = True
     for i in range(0, len(clubs), chunks):
         fields = []
@@ -114,7 +114,9 @@ def region(ctx, region: Regions):
     "Clubs from region"
     clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
     embeds = clubs_to_embeds(clubs, f"LA - {regs_reverse[region]} clubs")
-    return Response(embeds=embeds)
+    for e in embeds:
+        ctx.send(embed=e)
+    return "done"#Response(embeds=embeds)
 
 countries = {
     "United Kingdom": "UK",
