@@ -70,7 +70,8 @@ def get_league_emoji(trophies : int):
 
 def clubs_to_embeds(clubs, title):
     embeds = []
-    chunks = 20
+    chunks = 15
+    first = True
     for i in range(0, len(clubs), chunks):
         fields = []
         chunk = clubs[i:i+chunks]
@@ -87,11 +88,12 @@ def clubs_to_embeds(clubs, title):
             )
         embeds.append(
             Embed(
-                title=title,
+                title=title if first else None,
                 fields=fields,
                 color=1428501
             )
         )
+        first = False
     return embeds
 
 regs = {
