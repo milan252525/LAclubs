@@ -97,6 +97,7 @@ def clubs_to_embeds(clubs, title):
             )
         )
         first = False
+    print(f"generated {len(embeds)} embeds")
     return embeds[:10]
 
 regs = {
