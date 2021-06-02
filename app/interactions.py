@@ -115,7 +115,7 @@ def region(ctx, region: Regions):
     clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
     embeds = clubs_to_embeds(clubs, f"LA - {regs_reverse[region]} clubs")
     for e in embeds:
-        ctx.send(embed=e)
+        ctx.send(Response(embed=e))
     return "done"#Response(embeds=embeds)
 
 countries = {
