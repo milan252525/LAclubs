@@ -125,7 +125,7 @@ def region(ctx, region: Regions):
 
     thread = threading.Thread(target=do_followup)
     thread.start()
-    return "..."#Response(embeds=embeds)
+    return Response(embeds=embeds)
     
 
 countries = {
