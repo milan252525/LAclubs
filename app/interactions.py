@@ -94,7 +94,7 @@ def clubs_to_embeds(clubs, title):
             )
         )
         first = False
-    return embeds[:2]
+    return embeds[:1]
 
 regs = {
     "Asia": "AS",
