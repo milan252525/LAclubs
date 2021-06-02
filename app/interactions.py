@@ -115,10 +115,11 @@ for key, value in regs.items():
 @discord.command(annotations={"region": "Choose region"})
 def region(ctx, region: Regions):
     "Clubs from region"
+    print("start")
     clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
+    print("clubs done")
     embeds = clubs_to_embeds(clubs, f"LA - {regs_reverse[region]} clubs")
-    
-    print(ctx)
+    print("embeds done")
     return Response(embeds=embeds)
     
 
