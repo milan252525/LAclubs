@@ -75,7 +75,7 @@ def clubs_to_embeds(clubs, title):
         fields = []
         chunk = clubs[i:i+chunks]
         for club in chunk:
-            status_em = club_status[club['status']]['emoji']
+            status_em = club_status[club['type']]['emoji']
             req = club['required_trophies']
             req_em = get_league_emoji(club['required_trophies'])
             badge = club_badges[str(club['badge'])]
