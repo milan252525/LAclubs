@@ -94,6 +94,7 @@ def clubs_to_embeds(clubs, title):
             )
         )
         first = False
+    embeds = [e for e in embeds if len(e) < 5000]
     return embeds[:10]
 
 regs = {
