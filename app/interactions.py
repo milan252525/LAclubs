@@ -118,13 +118,7 @@ def region(ctx, region: Regions):
     clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
     embeds = clubs_to_embeds(clubs, f"LA - {regs_reverse[region]} clubs")
     
-    def do_followup():
-        time.sleep(1)
-        for e in embeds:
-            ctx.send(Response(embed=e))
-
-    thread = threading.Thread(target=do_followup)
-    thread.start()
+    print(ctx)
     return Response(embeds=embeds)
     
 
