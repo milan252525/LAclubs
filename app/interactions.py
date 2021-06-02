@@ -94,7 +94,7 @@ def clubs_to_embeds(clubs, title):
             )
         )
         first = False
-    return embeds[:10]
+    return embeds[:2]
 
 regs = {
     "Asia": "AS",
@@ -115,7 +115,6 @@ def region(ctx, region: Regions):
     clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
     embeds = clubs_to_embeds(clubs, f"LA - {regs_reverse[region]} clubs")
     return Response(embeds=embeds)
-
 
 countries = {
     "United Kingdom": "UK",
