@@ -89,7 +89,7 @@ def clubs_to_embeds(clubs, title):
             Embed(
                 title=title,
                 fields=fields,
-                colour=1428501
+                color=1428501
             )
         )
     return embeds
