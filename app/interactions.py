@@ -3,8 +3,7 @@ from flask_discord_interactions import Response, Embed, embed
 from . import get_data
 import enum
 
-import threading
-import time
+import logging
 
 club_status = {
     "inviteonly" : {"name": "Invite Only", "emoji": "<:invite_only:729734736490266625>"},
@@ -97,7 +96,7 @@ def clubs_to_embeds(clubs, title):
             )
         )
         first = False
-    print(f"generated {len(embeds)} embeds")
+    logging.error(f"generated {len(embeds)} embeds")
     return embeds[:10]
 
 regs = {
@@ -116,11 +115,11 @@ for key, value in regs.items():
 @discord.command(annotations={"region": "Choose region"})
 def region(ctx, region: Regions):
     "Clubs from region"
-    print("start")
+    logging.error("start")
     clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
-    print("clubs done")
+    logging.error("clubs done")
     embeds = clubs_to_embeds(clubs, f"LA - {regs_reverse[region]} clubs")
-    print("embeds done")
+    logging.error("embeds done")
     return Response(embeds=embeds)
     
 
