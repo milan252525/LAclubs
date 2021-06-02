@@ -3,6 +3,9 @@ from flask_discord_interactions import Response, Embed, embed
 from . import get_data
 import enum
 
+import threading
+import time
+
 club_status = {
     "inviteonly" : {"name": "Invite Only", "emoji": "<:invite_only:729734736490266625>"},
     "closed" : {"name": "Closed", "emoji": "<:locked:729734736573890570>"},
@@ -114,9 +117,16 @@ def region(ctx, region: Regions):
     "Clubs from region"
     clubs = get_data.get_clubs(region=region, country=None, type=None, members=None)
     embeds = clubs_to_embeds(clubs, f"LA - {regs_reverse[region]} clubs")
-    for e in embeds:
-        ctx.send(Response(embed=e))
-    return "done"#Response(embeds=embeds)
+    
+    def do_followup():
+        time.sleep(1)
+        for e in embeds:
+            ctx.send(Response(embed=e))
+
+    thread = threading.Thread(target=do_followup)
+    thread.start()
+    return "..."#Response(embeds=embeds)
+    
 
 countries = {
     "United Kingdom": "UK",
