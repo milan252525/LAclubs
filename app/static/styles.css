@@ -121,7 +121,12 @@ a.button {
 p.category {
     margin-left: 1vw;
     font-size: 150%;
+    margin-top: 0;
     margin-bottom: 2vh;
+}
+
+p.category:first-child {
+    margin-top: 0.5vh;
 }
 
 p.subcategory {
