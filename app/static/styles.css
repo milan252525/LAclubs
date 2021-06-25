@@ -124,7 +124,7 @@ p.category {
     margin-bottom: 2vh;
 }
 
-p.category:first-of-type {
+body p.category:first-child {
     padding-top: 0.05vh;
 }
 
