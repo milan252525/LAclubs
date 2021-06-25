@@ -124,10 +124,6 @@ p.category {
     margin-bottom: 2vh;
 }
 
-body p.category:first-child {
-    padding-top: 0.05vh;
-}
-
 p.subcategory {
     margin-left: 1vw;
     font-size: 110%;
