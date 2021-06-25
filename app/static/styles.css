@@ -126,7 +126,7 @@ p.category {
 }
 
 p.category:first-child {
-    margin-top: 0.5vh;
+    margin-top: 1vh;
 }
 
 p.subcategory {
