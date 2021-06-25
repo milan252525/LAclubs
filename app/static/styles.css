@@ -17,6 +17,8 @@ body {
     background-color: black;
     height: 25vh;
     width: 100%;
+
+    margin-bottom: 0.5vh;
     
     display: inline-flex;
     align-items: center;
