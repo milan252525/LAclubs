@@ -125,6 +125,11 @@ p.category {
     margin-bottom: 2vh;
 }
 
+p.category:first-of-type {
+    margin-top: 0.3vh;
+}
+
+
 p.subcategory {
     margin-left: 1vw;
     font-size: 110%;
