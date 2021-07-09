@@ -147,6 +147,29 @@ def api_history_log():
         if c not in allowed:
             return {"status" : "invalid"}
     return jsonify(get_data.get_club_log(tag))
+
+@app.route('/api/club')
+def api_club():
+    tag = request.args.get('tag', default = None)
+    if tag is None:
+        return {"status" : "missing_tag"}
+    club = get_data.get_club(tag)
+    if not club['success']:
+        return {"status" : "invalid"} 
+    return jsonify(get_data.get_club(tag))
+
+@app.route('/api/clubs')
+def api_clubs():
+    region = request.args.get('region', default = None)
+    country = request.args.get('country', default = None)
+    type = request.args.get('type', default = None)
+    members = request.args.get('members', default = 95, type=int)
+
+    if type is None and country is None and region is None:
+        type = "all"
+        
+    data = get_data.get_clubs(region=region, country=country, type=type, members=members)
+    return jsonify(data)
     
 @app.route('/favicon.ico')
 def favicon():
