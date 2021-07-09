@@ -48,7 +48,7 @@ def get_clubs(region, country, type, members):
     else:
         filter = {}
     
-    result = list(mongo.db.clubs.find(filter))
+    result = list(mongo.db.clubs.find(filter, {'_id': False}))
 
     for club in result:
         club['required_trophies_id'] = str(get_rank_id(club['required_trophies']))
@@ -71,7 +71,7 @@ role_sort_values = {
 def get_club(tag):
     regex = re.compile('[^a-zA-Z0-9]')
     tag_safe = regex.sub('', tag.upper().strip("#"))
-    club = mongo.db.clubs.find_one({"tag": tag_safe})
+    club = mongo.db.clubs.find_one({"tag": tag_safe}, {'_id': False})
 
     if club is None:
         return {
@@ -155,7 +155,6 @@ def get_role_priority(role):
         return 3
     elif role == "president":
         return 4
-        
 
 def get_club_log(tag):
     filter_time = int(datetime.datetime.timestamp(datetime.datetime.now() - datetime.timedelta(days=14)))
