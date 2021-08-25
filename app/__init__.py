@@ -28,18 +28,12 @@ csp = {
     ],
     'script-src': [ 
         "'self'",
-        "*.googleanalytics.com",
-        "*.google-analytics.com",
-        "www.googletagmanager.com",
         "cdnjs.cloudflare.com",
-
     ],
     'img-src' : [
         "'self'",
-        "www.google-analytics.com"
     ],
     'connect-src' : [
-        "*.google-analytics.com",
         "'self'"
     ]
 } 
