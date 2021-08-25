@@ -41,10 +41,10 @@ csp = {
 Talisman(app, content_security_policy=csp, content_security_policy_nonce_in=['script-src'])
 
 from app import routes
-from app import interactions
+#from app import interactions
 
-discord.set_route("/interactions")
+#discord.set_route("/interactions")
 #discord.update_slash_commands(guild_id=401883208511389716)
-discord.update_slash_commands()
+#discord.update_slash_commands()
 
 
