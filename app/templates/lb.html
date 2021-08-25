@@ -31,8 +31,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" nonce="{{ csp_nonce() }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script nonce="{{ csp_nonce() }}">
-    const trophy_icon = "{{ url_for('static', filename='img/icons/') }}";
-    const badge_icon = "{{ url_for('static', filename='img/badges/') }}";
+    const profile_icon = "https://cdn.brawlify.com/profile-low/";
+    const badge_icon = "https://cdn.brawlify.com/club/";
     const league_icon = "{{ url_for('static', filename='img/leagues/league_') }}";
 
     let loading = $('#loading');
@@ -53,8 +53,10 @@
                     .attr('class', 'center')
                     .append( $('<img>')
                         .attr('class', 'icon_bigger')
-                        .attr('src', trophy_icon + player['icon'] + '.png')
+                        .attr('src', profile_icon + player['icon'] + '.png')
                         .attr('alt', 'profile icon')
+                        .attr('height', 50)
+                        .attr('width', 50)
                     )
                     .append( $('<span>')
                         .text(player['name'])
@@ -65,8 +67,10 @@
                         .attr('class', 'center')
                         .append( $('<img>')
                             .attr('class', 'icon_bigger')
-                            .attr('src', badge_icon + player['club_badge'] + '.png')
+                            .attr('src', badge_icon + (parseInt(player['club_badge'])+8000000) + '.png')
                             .attr('alt', 'club badge')
+                            .attr('height', 50)
+                            .attr('width', 50)
                         )
                         .append( $('<span>')
                             .text(player['club_name'])
