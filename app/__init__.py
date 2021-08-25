@@ -32,6 +32,7 @@ csp = {
     ],
     'img-src' : [
         "'self'",
+        "cdn.brawlify.com"
     ],
     'connect-src' : [
         "'self'"
