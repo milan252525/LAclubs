@@ -22,7 +22,7 @@
         <tr id="{{ member.tag.lower().strip('#') }}">
             <td class="text_center"> {{ loop.index }} </td>
             <td class="center" data-sort-value="{{ member.name }}">
-                <img class="icon_bigger" src="{{ url_for('static', filename='img/icons/' + member.icon.id|string + '.png') }}" alt="profile icon">
+                <img class="icon_bigger" src="https://cdn.brawlify.com/profile-low/{{ member.icon.id|string }}.png" alt="profile icon">
                 <span> {{ member.name }} </span>
             </td>
             <td data-sort-value="{{ member.role_sort }}"> 
