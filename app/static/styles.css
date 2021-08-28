@@ -131,6 +131,11 @@ p.category:first-child {
     margin-top: 1vh;
 }
 
+p.first_category {
+    margin-top: 2vh;
+}
+
+
 p.subcategory {
     margin-left: 1vw;
     font-size: 110%;
