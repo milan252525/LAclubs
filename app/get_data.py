@@ -52,7 +52,7 @@ def get_clubs(region, country, type, members):
 
     for club in result:
         club['required_trophies_id'] = str(get_rank_id(club['required_trophies']))
-        club['badge'] = str(club['badge'] - 8000000)
+        #club['badge'] = str(club['badge'] - 8000000)
 
     if type == "low":
         result.sort(key=lambda x: x['member_count'])
@@ -80,7 +80,7 @@ def get_club(tag):
         }
 
     club['success'] = True
-    club['badge'] = str(club['badge'] - 8000000)
+    #club['badge'] = str(club['badge'] - 8000000)
     for member in club['members']:
         member['league_badge'] = str(get_rank_id(member['trophies']))
         member['role_sort'] = role_sort_values[member['role']]
@@ -101,7 +101,7 @@ def get_all_players(region, country):
     clubs = mongo.db.clubs.find(filter)
     result = []
     for club in clubs:
-        badge = str(club['badge'] - 8000000)
+        badge = str(club['badge'])
         for member in club['members']:
             member['name'] = member['name'].replace("﷽", "_")
             member['club_name'] = club['name']
