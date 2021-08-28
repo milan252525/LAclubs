@@ -107,6 +107,10 @@ a.button {
     margin-left: 3vw;
 }
 
+.button_row a:first-child .button_media {
+    margin-left: 1vw;
+}
+
 .button_lb:hover, .button_media:hover {
     background-color: lightgray;
 }
