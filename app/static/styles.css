@@ -88,7 +88,7 @@ a.button {
     justify-content: left;
 }
 
-.button_lb {
+.button_lb, .button_media {
     width: auto;
     border: 1pt solid gray;
     
@@ -107,11 +107,11 @@ a.button {
     margin-left: 3vw;
 }
 
-.button_lb:hover {
+.button_lb:hover, .button_media:hover {
     background-color: lightgray;
 }
 
-.button_lb p {
+.button_lb p, .button_media p {
     font-size: 75%;
 }
 
