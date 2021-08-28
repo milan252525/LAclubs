@@ -52,7 +52,7 @@ def get_clubs(region, country, type, members):
 
     for club in result:
         club['required_trophies_id'] = str(get_rank_id(club['required_trophies']))
-        #club['badge'] = str(club['badge'] - 8000000)
+        club['badge'] = str(club['badge'])
 
     if type == "low":
         result.sort(key=lambda x: x['member_count'])
@@ -80,7 +80,7 @@ def get_club(tag):
         }
 
     club['success'] = True
-    #club['badge'] = str(club['badge'] - 8000000)
+    club['badge'] = str(club['badge'])
     for member in club['members']:
         member['league_badge'] = str(get_rank_id(member['trophies']))
         member['role_sort'] = role_sort_values[member['role']]
