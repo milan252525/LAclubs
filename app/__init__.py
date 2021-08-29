@@ -46,5 +46,3 @@ from app import routes
 #discord.set_route("/interactions")
 #discord.update_slash_commands(guild_id=401883208511389716)
 #discord.update_slash_commands()
-
-

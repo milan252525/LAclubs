@@ -177,9 +177,6 @@ def favicon():
 
 """ @app.after_request
 def add_header(resp):
-    resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
-    resp.headers['X-Content-Type-Options'] = 'nosniff'
-    resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
     resp.headers['X-XSS-Protection'] = '1; mode=block'
     return resp """
 
