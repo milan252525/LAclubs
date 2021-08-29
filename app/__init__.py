@@ -6,7 +6,7 @@ from flask_discord_interactions import DiscordInteractions
 
 app = Flask(__name__)
 
-app.secret_key = b'\x00\xbd\xedSV\x83\x98\xda#\x9f\xd1\x90\x0b\xca\x86zO\x00'
+app.secret_key = b'U4E8UOIXJD7EU5ACUQBCJUNIRUPBVUDVK3RB1ICQJ41NOIE43EIRYX7M4JYT2J7P'
 
 app.config["MONGO_URI"] = "MONGO/laclubs"
 mongo = PyMongo(app)
