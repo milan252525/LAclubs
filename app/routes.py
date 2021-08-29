@@ -210,8 +210,8 @@ def me():
 @app.route("/callback/")
 def callback():
     discord_oauth.callback()
-    return redirect(url_for("/me/"))
+    return redirect(url_for("me"))
 
 @app.errorhandler(Unauthorized)
 def redirect_unauthorized(e):
-    return redirect(url_for("/login/"))
+    return redirect(url_for("login"))
