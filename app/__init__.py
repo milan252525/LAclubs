@@ -30,7 +30,8 @@ csp = {
     ],
     'img-src' : [
         "'self'",
-        "cdn.brawlify.com"
+        "cdn.brawlify.com",
+        "cdn.discordapp.com"
     ],
     'connect-src' : [
         "'self'"
