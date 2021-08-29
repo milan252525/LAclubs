@@ -6,7 +6,7 @@ from flask_discord_interactions import DiscordInteractions
 
 app = Flask(__name__)
 
-app.secret_key = b'U4E8UOIXJD7EU5ACUQBCJUNIRUPBVUDVK3RB1ICQJ41NOIE43EIRYX7M4JYT2J7P'
+app.secret_key = b'DG\xe0.\xb5\xc9\xf8\\\xa1u>J\xf9z\x14\xed'
 
 app.config["MONGO_URI"] = "MONGO/laclubs"
 mongo = PyMongo(app)
@@ -16,7 +16,7 @@ app.config["DISCORD_CLIENT_ID"] = 795325486242857000
 app.config["DISCORD_PUBLIC_KEY"] = "KEY"
 app.config["DISCORD_CLIENT_SECRET"] = "SECRET"
 
-app.config["DISCORD_REDIRECT_URI"] = "https://www.laclubs.net/callback"
+app.config["DISCORD_REDIRECT_URI"] = "https://www.laclubs.net/callback/"
 discord_oauth = DiscordOAuth2Session(app)
 
 csp = {
