@@ -16,7 +16,7 @@ app.config["DISCORD_CLIENT_ID"] = 795325486242857000
 app.config["DISCORD_PUBLIC_KEY"] = "KEY"
 app.config["DISCORD_CLIENT_SECRET"] = "SECRET"
 
-app.config["DISCORD_REDIRECT_URI"] = "https://www.laclubs.net/callback"
+app.config["DISCORD_REDIRECT_URI"] = "https://laclubs.net/callback"
 discord_oauth = DiscordOAuth2Session(app)
 
 csp = {
