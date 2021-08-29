@@ -201,6 +201,7 @@ def me():
         </head>
         <body>
             <img src='{user.avatar_url}' />
+            {user.id}
         </body>
     </html>"""
 
