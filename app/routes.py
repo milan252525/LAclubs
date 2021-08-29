@@ -1,6 +1,6 @@
 from flask import render_template, request, send_from_directory, make_response, redirect, url_for, jsonify, escape
 from app import app, discord_oauth
-from flask_discord import requires_authorization, Unauthorized
+import flask_discord
 from . import get_data
 import os
 import re
@@ -191,7 +191,7 @@ def login():
     return discord_oauth.create_session(scope=["identify", "guilds"])
 
 @app.route("/me/")
-@requires_authorization
+@flask_discord.requires_authorization
 def me():
     user = discord_oauth.fetch_user()
     return f"""
@@ -201,6 +201,7 @@ def me():
         </head>
         <body>
             <img src='{user.avatar_url}' />
+            {user.name}
             {user.id}
         </body>
     </html>"""
@@ -210,6 +211,6 @@ def callback():
     discord_oauth.callback()
     return redirect(url_for(".me"))
 
-@app.errorhandler(Unauthorized)
+@app.errorhandler(flask_discord.Unauthorized)
 def redirect_unauthorized(e):
     return redirect(url_for("login"))

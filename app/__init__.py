@@ -11,6 +11,8 @@ app.secret_key = b'DG\xe0.\xb5\xc9\xf8\\\xa1u>J\xf9z\x14\xed'
 app.config["MONGO_URI"] = "MONGO/laclubs"
 mongo = PyMongo(app)
 
+app.config["SESSION_COOKIE_DOMAIN"] = ".laclubs.net"
+
 discord = DiscordInteractions(app)
 app.config["DISCORD_CLIENT_ID"] = 795325486242857000
 app.config["DISCORD_PUBLIC_KEY"] = "KEY"
