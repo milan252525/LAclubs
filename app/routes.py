@@ -189,11 +189,11 @@ def add_header(resp):
 #    title = request.args.get('title', default = "")
 #    return redirect(f"brawlstars://webview?page={url}&popup_title={title}", code=302)
 
-@app.route("/login/")
+@app.route("/login")
 def login():
     return discord_oauth.create_session(scope=["identify"])
 
-@app.route("/me/")
+@app.route("/me")
 @requires_authorization
 def me():
     user = discord_oauth.fetch_user()
@@ -207,11 +207,11 @@ def me():
         </body>
     </html>"""
 
-@app.route("/callback/")
+@app.route("/callback")
 def callback():
     discord_oauth.callback()
-    return redirect(url_for(".me"))
+    return redirect(url_for("/me"))
 
 @app.errorhandler(Unauthorized)
 def redirect_unauthorized(e):
-    return redirect(url_for("login"))
+    return redirect(url_for("/login"))
