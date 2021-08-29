@@ -4,8 +4,7 @@ brawlstats
 gunicorn
 pymongo
 Flask-PyMongo
-Flask-Discord==0.1.63
+Flask-Discord
 gevent
-pyjwt==1.7.1
 timeago
 flask_discord_interactions

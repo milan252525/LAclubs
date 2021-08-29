@@ -1,6 +1,6 @@
 from flask import render_template, request, send_from_directory, make_response, redirect, url_for, jsonify, escape
-from app import app
-#from flask_discord import requires_authorization, Unauthorized
+from app import app, discord_oauth
+from flask_discord import requires_authorization, Unauthorized
 from . import get_data
 import os
 import re
@@ -188,3 +188,30 @@ def add_header(resp):
 #    url = request.args.get('url', default = "https://laclubs.net")
 #    title = request.args.get('title', default = "")
 #    return redirect(f"brawlstars://webview?page={url}&popup_title={title}", code=302)
+
+@app.route("/login/")
+def login():
+    return discord_oauth.create_session()
+
+@app.route("/me/")
+@requires_authorization
+def me():
+    user = discord_oauth.fetch_user()
+    return f"""
+    <html>
+        <head>
+            <title>{user.name}</title>
+        </head>
+        <body>
+            <img src='{user.avatar_url}' />
+        </body>
+    </html>"""
+
+@app.route("/callback/")
+def callback():
+    discord_oauth.callback()
+    return redirect(url_for(".me"))
+
+@app.errorhandler(Unauthorized)
+def redirect_unauthorized(e):
+    return redirect(url_for("login"))
