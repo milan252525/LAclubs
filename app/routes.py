@@ -45,7 +45,7 @@ def clubs():
 
 @app.route('/club')
 def club():
-    tag = request.args.get('tag', default = None)
+    tag = request.args.get('tag', default= "")
     club = get_data.get_club(tag)
     if not club['success']:
         title='ERROR'
@@ -60,8 +60,8 @@ def club():
 
 @app.route('/lb')
 def lb():
-    region = request.args.get('region', default = None)
-    country = request.args.get('country', default = None)
+    region = request.args.get('region', default= None)
+    country = request.args.get('country', default= None)
     
     limit = request.args.get('limit', default = -1, type=int)
     url = f"/api/lb?limit={limit}"
@@ -189,11 +189,11 @@ def add_header(resp):
 #    title = request.args.get('title', default = "")
 #    return redirect(f"brawlstars://webview?page={url}&popup_title={title}", code=302)
 
-@app.route("/login")
+@app.route("/login/")
 def login():
     return discord_oauth.create_session(scope=["identify", "guilds"])
 
-@app.route("/me")
+@app.route("/me/")
 @requires_authorization
 def me():
     user = discord_oauth.fetch_user()
@@ -207,10 +207,10 @@ def me():
         </body>
     </html>"""
 
-@app.route("/callback")
+@app.route("/callback/")
 def callback():
     discord_oauth.callback()
-    return redirect(url_for("me"))
+    return redirect(url_for(".me"))
 
 @app.errorhandler(Unauthorized)
 def redirect_unauthorized(e):
