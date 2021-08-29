@@ -175,13 +175,13 @@ def api_clubs():
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-@app.after_request
+""" @app.after_request
 def add_header(resp):
     resp.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
     resp.headers['X-Content-Type-Options'] = 'nosniff'
     resp.headers['X-Frame-Options'] = 'SAMEORIGIN'
     resp.headers['X-XSS-Protection'] = '1; mode=block'
-    return resp
+    return resp """
 
 #@app.route('/bs')
 #def bs():
@@ -189,11 +189,11 @@ def add_header(resp):
 #    title = request.args.get('title', default = "")
 #    return redirect(f"brawlstars://webview?page={url}&popup_title={title}", code=302)
 
-@app.route("/login/")
+@app.route("/login")
 def login():
-    return discord_oauth.create_session(scope=["identify"])
+    return discord_oauth.create_session(scope=["identify", "guilds"])
 
-@app.route("/me/")
+@app.route("/me")
 @requires_authorization
 def me():
     user = discord_oauth.fetch_user()
@@ -207,7 +207,7 @@ def me():
         </body>
     </html>"""
 
-@app.route("/callback/")
+@app.route("/callback")
 def callback():
     discord_oauth.callback()
     return redirect(url_for("me"))
