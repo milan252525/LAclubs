@@ -295,6 +295,12 @@ p.nothing {
     margin-top: 3vh;
 }
 
+p.error {
+    margin-left: 3vw;
+    font-size: 100%;
+    margin-top: 3vh;
+}
+
 /* CLUB HISTORY */
 
 #chart_container {
