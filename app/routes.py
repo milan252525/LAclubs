@@ -177,7 +177,11 @@ def favicon():
 
 @app.errorhandler(404)
 def error_404(error):
-    return render_template("error.html", title="Error 404", error="Our goblins could not find this page."), 404
+    return render_template("error.html", title="Error 404", error="404 - Our goblins could not find this page."), 404
+
+@app.errorhandler(500)
+def error_500(error):
+    return render_template("error.html", title="Error 500", error="500 - Something went terribly wrong. Sorry for the inconvenience."), 500
 
 """ @app.after_request
 def add_header(resp):
