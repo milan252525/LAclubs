@@ -175,7 +175,7 @@ def api_clubs():
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-@app.error_handler(404)
+@app.errorhandler(404)
 def error_404(error):
     return render_template("error.html", title="Error 404", error="404 - our goblind could not find this page"), 404
 
