@@ -85,7 +85,7 @@ def clubs_to_embeds(clubs, title):
             fields.append(
                 embed.Field(
                     name=f"{badge} {club['name']} #{club['tag']}",
-                    value=f"{status_em} <:bstrophy:552558722770141204>`{club['trophies']}` {req_em}`{req}+` <:people:449645181826760734>`{club['member_count']}/100`"
+                    value=f"{status_em} <:bstrophy:552558722770141204>`{club['trophies']}` {req_em}`{req}+` <:people:449645181826760734>`{club['member_count']}/30`"
                 )
             )
         embeds.append(
@@ -162,6 +162,6 @@ def country(ctx, country: Countries):
 @discord.command()
 def low(ctx):
     "Clubs with low member count"
-    clubs = get_data.get_clubs(region=None, country=None, type="low", members=95)
+    clubs = get_data.get_clubs(region=None, country=None, type="low", members=25)
     embeds = clubs_to_embeds(clubs, f"LA - Low clubs")
     return Response(embeds=embeds)
