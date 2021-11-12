@@ -201,7 +201,7 @@ def login():
 @app.route("/dashboard/")
 @flask_discord.requires_authorization
 def dashboard():
-    allowed = (230947675837562880)
+    allowed = [230947675837562880]
     user = discord_oauth.fetch_user()
     if user.id in allowed:
         return make_response(render_template('dashboard.html', title="Dashboard", user=user))
