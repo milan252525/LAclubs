@@ -208,7 +208,7 @@ def dashboard():
     else:
         return render_template("error.html", title="Error 401", error="401 - You are not allowed to access this page."), 401
 
-@app.errorhandler(Unauthorized)
+@app.errorhandler(flask_discord.Unauthorized)
 def redirect_unauthorized(e):
     return redirect(url_for("login"))
 
