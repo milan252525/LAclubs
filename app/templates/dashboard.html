@@ -19,7 +19,38 @@
             <img src='{{ user.avatar_url }}' width=""/>
             <p>{{ user.name }}</p>
         </div>
+
+        <div class="button_area">
+            <a class="button" href="lb?limit=100">CLUBS</a>
+            <a class="button" href="lb?limit=1000">SERVERS</a>
+        </div>
         
+        <p class="category">ADD CLUB:</p>
+        <form action="" method="post">
+            <label for="club_tag">Club tag:</label>
+            <input type="text" name="club_tag" id="club_tag"><br>
+            
+            <label for="club_region">Region:</label>
+            <input type="text" name="club_region" id="club_region" list="regions"><br>
+                <datalist id="regions">
+                    <option value="EU">
+                    <option value="AS">
+                    <option value="AU">
+                    <option value="NA">
+                </datalist>
+
+            <label for="club_country">Country:</label>
+            <input type="text" name="club_country" id="club_country" list="countries"><br>
+                <datalist id="countries">
+                    <option value="SPAIN">
+                    <option value="PORTUGAL">
+                    <option value="UK">
+                    <option value="USA">
+                    <option value="INDIA">
+                </datalist>
+
+            <input type="submit" value="ADD CLUB">
+        </form>
 
     </body>
 </html>
