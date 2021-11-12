@@ -203,6 +203,7 @@ def login():
 def dashboard():
     allowed = [230947675837562880]
     user = discord_oauth.fetch_user()
+    print(user, user.id)
     if user.id in allowed:
         return make_response(render_template('dashboard.html', title="Dashboard", user=user))
     else:
