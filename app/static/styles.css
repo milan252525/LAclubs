@@ -312,7 +312,7 @@ p.error {
 }
 
 .user_box {
-    border: 1pt solid gray;
+    border: 2pt solid lightgray;
     margin-top: 0.5vh;
     margin-left: 1vw;
     display:inline-flex;
@@ -322,6 +322,7 @@ p.error {
 .user_box img {
     height: 10vh;
     margin-right:2vw;
+    margin-left:2vw;
 }
 
 .user_box p {
