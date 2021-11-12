@@ -311,6 +311,16 @@ p.error {
     width: 95vw;
 }
 
+.user_box {
+    border: 1pt solid gray;
+    margin-top: 0.5vh;
+    margin-left: 1vw;
+}
+
+.user_box img {
+    float: right;
+}
+
 @media (max-width: 1200px) {
     .club {
         width: 95vw;

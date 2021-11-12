@@ -15,8 +15,11 @@
             <h1>{{ title }}</h1>
         </div>
 
-        <img src='{{ user.avatar_url }}' height="50" width="50" style="float: right; margin-right: 1vw;"/>
-        <p>{{ user.name }}</p>
+        <div class="user_box">
+            <img src='{{ user.avatar_url }}' height="50" width="50"/>
+            <p>{{ user.name }}</p>
+        </div>
+        
 
     </body>
 </html>
