@@ -315,11 +315,17 @@ p.error {
     border: 1pt solid gray;
     margin-top: 0.5vh;
     margin-left: 1vw;
-    width: 20vw;
+    display:inline-flex;
+    align-items:center;
+}
+
+.user_box img {
+    height: 10vh;
+    margin-right:2vw;
 }
 
 .user_box p {
-    float: right;
+    margin-right:2vw;
 }
 
 @media (max-width: 1200px) {
