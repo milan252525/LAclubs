@@ -322,11 +322,11 @@ p.error {
 .user_box img {
     height: 10vh;
     margin-right:2vw;
-    margin-left:2vw;
+    margin-left:1vw;
 }
 
 .user_box p {
-    margin-right:2vw;
+    margin-right:1vw;
 }
 
 @media (max-width: 1200px) {
