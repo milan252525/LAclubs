@@ -46,6 +46,9 @@ for club in clubs:
         if error >= 3:
             print("API OFFLINE STOPPING...")
             sys.exit()
+    if data['name'] != club['name']:
+        db['tracked_clubs'].update_one({"tag": club['tag']}, {"$set": {"name": data['name']}})
+        print("Updated name of", club["name"], " to ", data['name'])
     try:
         pres, vp_count, sen_count = get_pres_vp_sen(data['members'])
         club_data = {
