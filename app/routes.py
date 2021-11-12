@@ -198,27 +198,21 @@ def add_header(resp):
 def login():
     return discord_oauth.create_session(scope=["identify", "guilds"])
 
-@app.route("/me/")
+@app.route("/dashboard/")
 @flask_discord.requires_authorization
-def me():
+def dashboard():
+    allowed = (230947675837562880)
     user = discord_oauth.fetch_user()
-    return f"""
-    <html>
-        <head>
-            <title>{user.name}</title>
-        </head>
-        <body>
-            <img src='{user.avatar_url}' />
-            {user.name}
-            {user.id}
-        </body>
-    </html>"""
+    if user.id in allowed:
+        return make_response(render_template('dashboard.html', title="Dashboard", user=user))
+    else:
+        return render_template("error.html", title="Error 401", error="401 - You are not allowed to access this page."), 401
+
+@app.errorhandler(Unauthorized)
+def redirect_unauthorized(e):
+    return redirect(url_for("login"))
 
 @app.route("/callback/")
 def callback():
     discord_oauth.callback()
-    return redirect(url_for(".me"))
-
-@app.errorhandler(flask_discord.Unauthorized)
-def redirect_unauthorized(e):
-    return redirect(url_for("login"))
+    return redirect(url_for(".dashboard"))
