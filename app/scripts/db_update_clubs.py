@@ -41,7 +41,7 @@ for club in clubs:
         data = api.get_club(tag)
         data = data.raw_data
     except brawlstats.errors.RequestError as e:
-        print("ERROR, club['name'], club['tag'], e)
+        print("ERROR", club['name'], club['tag'], e)
         errors += 1
         if error >= 3:
             print("API OFFLINE STOPPING...")
