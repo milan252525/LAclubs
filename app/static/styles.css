@@ -315,9 +315,10 @@ p.error {
     border: 1pt solid gray;
     margin-top: 0.5vh;
     margin-left: 1vw;
+    width: 20vw;
 }
 
-.user_box img {
+.user_box p {
     float: right;
 }
 
