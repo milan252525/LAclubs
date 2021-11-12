@@ -36,12 +36,12 @@ errors = 0
 
 for club in clubs:
     tag = club['tag']
-    print(f"Updating {club['name']}")
+    print(f"Updating {club['name']} {club['tag']}")
     try:
         data = api.get_club(tag)
         data = data.raw_data
     except brawlstats.errors.RequestError as e:
-        print(club, ['name']e)
+        print(club['name'], club['tag'], e)
         errors += 1
         if error >= 3:
             print("API OFFLINE STOPPING...")
