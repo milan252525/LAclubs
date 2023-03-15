@@ -3,7 +3,7 @@ import brawlstats
 import sys
 import pymongo
 
-token="TOKEN "
+token="TOKEN"
 
 try:
     api = brawlstats.Client(token)
